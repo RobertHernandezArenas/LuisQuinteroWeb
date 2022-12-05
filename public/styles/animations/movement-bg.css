@@ -1,0 +1,19 @@
+@keyframes MOVE-BG {
+	from {
+		-webkit-transform: scale(1.15);
+	}
+
+	to {
+		-webkit-transform: scale(1);
+	}
+}
+
+@-webkit-keyframes MOVE-BG {
+	from {
+		-webkit-transform: scale(1.15);
+	}
+
+	to {
+		-webkit-transform: scale(1);
+	}
+}

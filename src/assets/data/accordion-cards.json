@@ -1,0 +1,39 @@
+{
+    "accordion": [
+        {
+            "description": "LQ10 (Hashtag-ele-cú-diez) Lorem ipsum dolor sit amet consectetur.",
+            "image": "/images/accordion/ACC00.jpg",
+            "readMore": "Seguir leyendo ➔",
+            "title": "#LQ10 MY BRAND",
+            "url": "#"
+        },
+        {
+            "description": "La empresa multinacional nº 1 de ropa deportiva renueva a Quintero.",
+            "image": "/images/accordion/ACC07.jpg",
+            "readMore": "Seguir leyendo ➔",
+            "title": "EMBAJADOR NIKE",
+            "url": "#"
+        },
+        {
+            "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+            "image": "/images/accordion/ACC03.jpg",
+            "readMore": "Seguir leyendo ➔",
+            "title": "BIENVENIDOS...",
+            "url": "#"
+        },
+        {
+            "description": "La empresa multinacional nº 1 de ropa deportiva renueva a Quintero.",
+            "image": "/images/accordion/ACC06.jpg",
+            "readMore": "Seguir leyendo ➔",
+            "title": "EMBAJADOR NIKE",
+            "url": "#"
+        },
+        {
+            "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+            "image": "/images/accordion/ACC04.jpg",
+            "readMore": "Seguir leyendo ➔",
+            "title": "Titulo Luisito H3",
+            "url": "#"
+        }
+    ]
+}

@@ -1,0 +1,28 @@
+{
+    "videos": [
+        {
+            "bg": "https://roberthernandezarenas.github.io/videos/VIDEO-01.MP4",
+            "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam qui, minus obcaecati tenetur blanditiis nemo voluptatum expedita et doloribus ducimus sed voluptates ea. Ullam repellendus, officia veritatis at placeat laudantium dolor alias eum reiciendis. Doloremque alias magnam odio non provident eius nulla eveniet minima error eum nihil at expedita debitis voluptatum ab maiores eos rerum excepturi, laudantium harum architecto doloribus mollitia? Esse magni aspernatur ipsum adipisci corrupti vel nemo quae laudantium natus placeat! Nisi, sequi sapiente eaque similique ab eveniet reiciendis libero, officia rerum nihil atque non aliquam repudiandae ratione sint quod harum delectus magnam? Necessitatibus doloribus voluptatibus odio ipsam?",
+            "subtitle": "",
+            "title": "Hola Titulo",
+            "url": "https://www.instagram.com/reel/ChIa_IKqFej/?igshid=YmMyMTA2M2Y=",
+            "video": "https://roberthernandezarenas.github.io/videos/VIDEO-01.MP4"
+        },
+        {
+            "bg": "https://roberthernandezarenas.github.io/videos/VIDEO-02.mp4",
+            "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam qui, minus obcaecati tenetur blanditiis nemo voluptatum expedita et doloribus ducimus sed voluptates ea. Ullam repellendus, officia veritatis at placeat laudantium dolor alias eum reiciendis. Doloremque alias magnam odio non provident eius nulla eveniet minima error eum nihil at expedita debitis voluptatum ab maiores eos rerum excepturi, laudantium harum architecto doloribus mollitia? Esse magni aspernatur ipsum adipisci corrupti vel nemo quae laudantium natus placeat! Nisi, sequi sapiente eaque similique ab eveniet reiciendis libero, officia rerum nihil atque non aliquam repudiandae ratione sint quod harum delectus magnam? Necessitatibus doloribus voluptatibus odio ipsam?",
+            "subtitle": "",
+            "title": "Hola Titulo",
+            "url": "https://www.instagram.com/reel/ChIa_IKqFej/?igshid=YmMyMTA2M2Y=",
+            "video": "https://roberthernandezarenas.github.io/videos/VIDEO-02.mp4"
+        },
+        {
+            "bg": "https://roberthernandezarenas.github.io/videos/VIDEO-03.mp4",
+            "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam qui, minus obcaecati tenetur blanditiis nemo voluptatum expedita et doloribus ducimus sed voluptates ea. Ullam repellendus, officia veritatis at placeat laudantium dolor alias eum reiciendis. Doloremque alias magnam odio non provident eius nulla eveniet minima error eum nihil at expedita debitis voluptatum ab maiores eos rerum excepturi, laudantium harum architecto doloribus mollitia? Esse magni aspernatur ipsum adipisci corrupti vel nemo quae laudantium natus placeat! Nisi, sequi sapiente eaque similique ab eveniet reiciendis libero, officia rerum nihil atque non aliquam repudiandae ratione sint quod harum delectus magnam? Necessitatibus doloribus voluptatibus odio ipsam?",
+            "subtitle": "",
+            "title": "Hola Titulo",
+            "url": "https://www.instagram.com/reel/ChIa_IKqFej/?igshid=YmMyMTA2M2Y=",
+            "video": "https://roberthernandezarenas.github.io/videos/VIDEO-03.mp4"
+        }
+    ]
+}
