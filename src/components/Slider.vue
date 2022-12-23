@@ -40,7 +40,7 @@ onMounted(() => {
 
 <style scoped>
 .patreon {
-	padding-top: 75px;
+	padding-top: 1rem;
 }
 
 

@@ -1,33 +1,35 @@
 <template>
 	<section class="stats">
-		<nav class="stats-nav">
-			<h2 class="stats__title">LUIS QUINTERO 22-23</h2>
-		</nav>
-		<h3 class="stats__subtitle">TOTAL</h3>
-		<BarStats
-			barName="GOLES"
-			:barNum="goals"
-			:barIcon="barIconGoal"
-			:showTotalMatches="false"
-			:average="playedMatches"
-			:showAverage="true"
-		/>
-		<BarStats
-			barName="ASISTENCIAS"
-			:barNum="asistGoals"
-			:barIcon="barIconFootboots"
-			:showTotalMatches="false"
-			:average="playedMatches"
-			:showAverage="true"
-		/>
-		<BarStats
-			barName="PARTIDOS"
-			:barNum="playedMatches"
-			:barIcon="barIconGoalNet"
-			:showTotalMatches="true"
-			:average="playedMatches"
-			:showAverage="false"
-		/>
+		<div class="wrapper__stats">
+			<nav class="stats-nav">
+				<h2 class="stats__title">STATS 22-23</h2>
+			</nav>
+			<h3 class="stats__subtitle">TOTAL</h3>
+			<BarStats
+				barName="GOLES"
+				:barNum="goals"
+				:barIcon="barIconGoal"
+				:showTotalMatches="false"
+				:average="playedMatches"
+				:showAverage="true"
+			/>
+			<BarStats
+				barName="ASISTENCIAS"
+				:barNum="asistGoals"
+				:barIcon="barIconFootboots"
+				:showTotalMatches="false"
+				:average="playedMatches"
+				:showAverage="true"
+			/>
+			<BarStats
+				barName="PARTIDOS"
+				:barNum="playedMatches"
+				:barIcon="barIconGoalNet"
+				:showTotalMatches="true"
+				:average="playedMatches"
+				:showAverage="false"
+			/>
+		</div>
 	</section>
 </template>
 
@@ -37,24 +39,22 @@ import BarStats from "@/components/BarStats.vue";
 const barIconGoalNet = "/images/goal-net.svg";
 const barIconGoal = "/images/ball.svg";
 const barIconFootboots = "/images/football-boots.png";
-const playedMatches = 12;
-const goals = 8;
-const asistGoals = 5;
+const playedMatches = 15;
+const goals = 10;
+const asistGoals = 6;
 </script>
 
 <style scoped>
 .stats {
-	background: url("/images/stats/ST01.jpg");
-	background-size: cover;
-	background-position: -60px 70px;
-	background-repeat: no-repeat;
-	background-attachment: fixed;
-	display: flex;
-	gap: 1.5rem;
-	flex-direction: column;
 	padding: 5rem 1rem;
 	width: 100vw;
 	height: auto;
+}
+
+.wrapper__stats {
+	display: flex;
+	gap: 1.5rem;
+	flex-direction: column;
 }
 
 .stats-nav {
@@ -68,14 +68,16 @@ const asistGoals = 5;
 }
 
 .stats__title {
-	/* font-family: 'Proxima Nova Rg'; */
-	font-size: 1.5rem;
-	font-weight: 600;
+    margin: 1rem 0;
+    font-size: 2.625rem;
+    font-weight: 800;
+    padding-left: 1rem;
+    border-left: var(--mainColor) 8px solid;
 }
 
 .stats__subtitle {
 	text-align: left;
-	font-size: 2.5rem;
+	font-size: 1.5rem;
 	font-weight: 600;
 }
 @media only screen and (min-width: 1200px) {

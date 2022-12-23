@@ -2,27 +2,29 @@
 	<div class="biography-content">
 		<div class="content-container">
 			<div class="content-image">
-				<img class="img" src="/images/animations/glitch-fx/LUIS-VILLARREAL.png" alt="" />
+				<img
+					class="img"
+					src="/images/animations/glitch-fx/LUIS-VILLARREAL.png"
+					alt=""
+					loading="lazy"
+				/>
 			</div>
 		</div>
 		<article class="content-article">
 			<div class="content-article__header">
 				<h2 class="content-article__header-title">BIOGRAFIA</h2>
 				<p class="content-article__header-data">
-					Nacimiento: 12 de Octubre 2004 <br />
 					Nacionalidad:
-					
+
 					<img
 						class="content-article__nacionality-flags"
 						src="/images/flags/spain.png"
 						alt="Bandera de España"
-						loading="lazy"
 					/>
 					<img
 						class="content-article__nacionality-flags"
 						src="/images/flags/colombia.png"
 						alt="Bandera de Colombia"
-						loading="lazy"
 					/>
 					<br />
 					Altura/Peso: 180cm / 75kg <br />
@@ -32,12 +34,28 @@
 			</div>
 			<div class="content-article__body">
 				<p class="content-article__body-biography">
-					Nacido en la provicia de Alicante en 2004 y criado en el seno de una familia humilde, 
-					Luis Quintero comienza sus primeros pasos como futbolista en la peña barcelonista del pueblo alicantino de Santa Pola, al poco tiempo decide llamado promesas de Elche se incorporo a las categorias
-					inferiores del Elche Club de Futbol Lorem, ipsum dolor sit amet
-					consectetur adipisicing elit. Numquam laborum aliquid non? Odio
-					dolore laborum facilis aliquid dicta minus sunt iure explicabo
-					illum dolorem, numquam odit assumenda ab. Ab, animi.
+					Luis Quintero es un joven jugador de fútbol nacido el 12 de
+					octubre de 2004 en Alicante, Comenzó su carrera en el fútbol
+					desde temprana edad en la Peña Barcelonista del pueblo alicantino
+					de Santa Pola. Pasado un tiempo, su familia decide mudarse a la
+					ciudad de Elche. Allí, tuvo la oportunidad de seguir
+					enriqueciendo su fútbol en equipos como Promesas de Elche, Elche
+					C.F y Kelme C.F. Gracias a su trabajo, esfuerzo y sacrificio le
+					concedieron tener la oportunidad de ir convocado con la Selección
+					Valenciana de Fútbol en los distintos años que estuvo en los
+					equipos ya mencionados con anterioridad. Con 14 años, el
+					Villarreal C.F se fija en su potencial y le brinda la oportunidad
+					de continuar desarrollando su carrera en las divisiones
+					inferiores del club en donde se ha convertido en una de las
+					piezas clave de la plantilla del juvenil A que participa en la
+					Liga División de Honor del grupo 7.
+					<br />
+					Luis Quintero destaca por sus habilidades de organizador y
+					creador de oportunidades de gol, cuenta con una gran visión del
+					juego que le permite anticiparse a sus rivales y encontrar
+					espacios en el campo. Su desparpajo en el terreno de juego le ha
+					permitido destacarse en la categoría juvenil del Villarreal C.F
+					hasta la fecha.
 				</p>
 			</div>
 		</article>
@@ -86,7 +104,7 @@ b {
 }
 
 .content-article {
-	 color: black;
+	color: black;
 }
 
 .content-article__header {
@@ -117,40 +135,39 @@ b {
 }
 
 @media only screen and (min-width: 1200px) {
-
 	.biography-content {
 		gap: 4rem;
 	}
 
 	.content-image {
-    width: 500px;
-    height: 580px;
-}
+		width: 500px;
+		height: 580px;
+	}
 
-.content-container{
-	height: fit-content;
-}
+	.content-container {
+		height: fit-content;
+	}
 
-.content-article {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    color: black;
-    width: 45%;
-}
+	.content-article {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: flex-start;
+		color: black;
+		width: 45%;
+	}
 
-.content-article__header-title {
-	font-size: 5rem;
-}
+	.content-article__header-title {
+		font-size: 5rem;
+	}
 
-.content-article__header-data, .content-article__body-biography {
-	font-size: 1rem;
-}
+	.content-article__header-data,
+	.content-article__body-biography {
+		font-size: 1rem;
+	}
 
-.content-article__nacionality-flags {
-	width: 30px;
-}
-
+	.content-article__nacionality-flags {
+		width: 30px;
+	}
 }
 </style>

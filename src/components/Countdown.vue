@@ -32,7 +32,6 @@ const props = defineProps({
 
 const eventEmit = defineEmits(["onFinish"]);
 const { date } = toRefs(props);
-console.log(date.value);
 const event = ref(date);
 const finish = ref(false);
 const daysText = ref("Dias");
@@ -95,9 +94,9 @@ const days = computed(() => {
 onMounted(() => {
 	window.setInterval(() => {
 		now.value = Math.trunc(new Date().getTime() / 1000);
-		if (!finish.value && calculatedDate.value - now.value <= 0) {
+		if (!finish.value && calculatedDate.value - now.value <= 1) {
 			finish.value = true;
-			$emit("onFinish");
+			// $emit("onFinish");
 		}
 	}, 1000);
 });

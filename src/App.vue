@@ -1,7 +1,7 @@
 <template>
 	<MenuBar />
 	<AccordionGallery />
-	<Countdown :date="end" @onFinish="finish()" />
+	<Countdown :date="dateDay" @onFinish="finish()" />
 	<MatchDays />
 	<Biography />
 	<Slider />
@@ -12,12 +12,14 @@
 	<Contact />
 	<ButtonUp />
 	<Cookies />
+	<Updateo />
 	<FooterX />
 	<!-- <CardVideos :url="url" :title="title" :description="description" /> -->
 </template>
 
 <script setup>
-import { onMounted, ref } from "vue";
+import { onMounted, ref, onBeforeMount, onUpdated, computed, reactive } from "vue";
+import SEASONMATCHES from "./assets/data/matches.json";
 import AccordionGallery from "@/components/AccordionGallery.vue";
 import ButtonUp from "@/components/ButtonUp.vue";
 import Contact from "@/components/Contact.vue";
@@ -33,31 +35,30 @@ import Mansory from "@/components/Mansory.vue";
 import FooterX from "@/components/FooterX.vue";
 import Newsletter from "@/components/Newsletter.vue";
 import Stats from "@/components/Stats.vue";
+import Updateo from "@/components/Updateo.vue";
 
-const datesX = ref([]);
 const dates = ref([
-	new Date("2022-12-04T14:30:00").getTime(),
-	new Date("2022-12-04T14:35:00").getTime(),
-	new Date("2022-12-04T14:30:00").getTime(),
-	new Date("2022-12-04T14:35:00").getTime(),
-	new Date("2022-12-04T14:30:00").getTime(),
+	//new Date("2022-12-12T20:08:00").getTime(),
+	// new Date("2022-12-04T14:35:00").getTime(),
+	// new Date("2022-12-04T14:30:00").getTime(),
+	// new Date("2022-12-04T14:35:00").getTime(),
+	// new Date("2022-12-04T14:30:00").getTime(),
 ]);
 
-let end = ref(datesX.value[0]);
-
-const finish = () => {
-	console.log("acabo")
-	dates.value.find(x => {
-		if (!(x <= new Date().getTime())) {
-			console.log(new Date(x));
-			datesX.value.push(x);
-			end.value = datesX.value[0]
+let end = ref();
+let dateDay = computed(() => {
+	return (end = dates.value[0]);
+});
+const finish = () => {};
+onBeforeMount(() => {
+	
+	SEASONMATCHES.matches.map((match, index) => {
+		if (!(new Date(match.date).getTime() <= new Date().getTime())) {
+			dates.value.push(new Date(match.date).getTime());
+			end.value = dates.value[0];
 		}
 	});
-};
-finish()
 
-onMounted(() => {
 	// async function getIpClient() {
 	// 	try {
 	// 		const response = await fetch("https://api.ipify.org?format=json");
@@ -69,8 +70,6 @@ onMounted(() => {
 	// }
 
 	// getIpClient();
-
-	console.log(document.cookie);
 
 	/* --------------- SCROLL FX ---------------- */
 	const fxs = document.querySelectorAll(".fx");
@@ -93,6 +92,9 @@ onMounted(() => {
 	}
 	/* ------------------------------------------ */
 });
+onMounted(() => {});
+
+onUpdated(() => {});
 </script>
 
 <style>

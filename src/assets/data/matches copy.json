@@ -2,19 +2,19 @@
     "matches": [
         {
             "categoryLeague": "Div. Honor Juvenil",
-            "date": "2022-09-02",
+            "date": "2022-01-15",
             "league": "Grupo-7",
-            "match": "Jornada 1",
+            "match": "Jornada 16",
             "season": "2022-2023",
-            "team1": {
-                "image": "/images/teams/alzira.png",
-                "name": "Alzira",
-                "result1": "1"
-            },
-            "team2": {
+            "team1":{
                 "image": "/images/teams/villarreal.png",
                 "name": "Villarreal",
                 "result2": "1"
+            },
+            "team2": {
+                "image": "/images/teams/alzira.png",
+                "name": "Alzira",
+                "result1": "1"
             }
         },
         {
@@ -253,23 +253,6 @@
                 "image": "/images/teams/castellon.png",
                 "name": "Castellon",
                 "result2": "0"
-            }
-        },
-        {
-            "categoryLeague": "Div. Honor Juvenil",
-            "date": "2023-01-15",
-            "league": "Grupo-7",
-            "match": "Jornada 16",
-            "season": "2022-2023",
-            "team1":{
-                "image": "/images/teams/villarreal.png",
-                "name": "Villarreal C.F Juvenil A",
-                "result2": "1"
-            },
-            "team2": {
-                "image": "/images/teams/alzira.png",
-                "name": "U.D Alzira Juvenil A",
-                "result1": "1"
             }
         }
     ]
