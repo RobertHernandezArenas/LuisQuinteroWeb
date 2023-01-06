@@ -39,6 +39,7 @@ const hoursText = ref("Horas");
 const minutesText = ref("Mins");
 const seconsdText = ref("Segs");
 
+
 const singOrPlural = str => {
 	let item;
 	switch (str) {

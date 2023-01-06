@@ -4,7 +4,7 @@
 			<div class="content-image">
 				<img
 					class="img"
-					src="/images/animations/glitch-fx/LUIS-VILLARREAL.png"
+					src="/images/animations/glitch-fx/LUIS-VILLARREAL.webp"
 					alt=""
 					loading="lazy"
 				/>
@@ -12,7 +12,7 @@
 		</div>
 		<article class="content-article">
 			<div class="content-article__header">
-				<h2 class="content-article__header-title">BIOGRAFIA</h2>
+				<h2 class="content-article__header-title">BIOGRAFÍA</h2>
 				<p class="content-article__header-data">
 					Nacionalidad:
 

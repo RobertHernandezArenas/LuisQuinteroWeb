@@ -1,31 +1,41 @@
 <template>
-	<MenuBar />
+	 <MenuBar />
+	<Marquesina /> 
 	<AccordionGallery />
 	<Countdown :date="dateDay" @onFinish="finish()" />
 	<MatchDays />
 	<Biography />
-	<Slider />
-	<Stats />
-	<!-- <Mansory /> 
-	<GridMansory /> -->
-	<Newsletter />
-	<Contact />
+	<Slider />	<Contact />
+	<!--<Stats />-->
+	
+	<!--<GridMansory /> 
+	 <Newsletter />
+<Mansory /> 
 	<ButtonUp />
 	<Cookies />
-	<Updateo />
+	<Updateo /> -->
 	<FooterX />
 	<!-- <CardVideos :url="url" :title="title" :description="description" /> -->
 </template>
 
 <script setup>
-import { onMounted, ref, onBeforeMount, onUpdated, computed, reactive } from "vue";
+import {
+	onMounted,
+	ref,
+	onBeforeMount,
+	onUpdated,
+	computed,
+	reactive,
+} from "vue";
 import SEASONMATCHES from "./assets/data/matches.json";
 import AccordionGallery from "@/components/AccordionGallery.vue";
 import ButtonUp from "@/components/ButtonUp.vue";
 import Contact from "@/components/Contact.vue";
 import Countdown from "@/components/Countdown.vue";
+import Demo from "@/components/Demo.vue";
 import GridMansory from "@/components/GridMansory.vue";
 import MatchDays from "@/components/MatchDays.vue";
+import Marquesina from "@/components/Marquesina.vue";
 import MenuBar from "@/components/MenuBar.vue";
 import Slider from "@/components/Slider.vue";
 import Biography from "@/components/Biography.vue";
@@ -51,7 +61,6 @@ let dateDay = computed(() => {
 });
 const finish = () => {};
 onBeforeMount(() => {
-	
 	SEASONMATCHES.matches.map((match, index) => {
 		if (!(new Date(match.date).getTime() <= new Date().getTime())) {
 			dates.value.push(new Date(match.date).getTime());
@@ -99,8 +108,8 @@ onUpdated(() => {});
 
 <style>
 @import "./assets/styles/reset.css";
-@import "./assets/fonts/SFProDisplay/index.css";
-@import "./assets/fonts/Montserrat/index.css";
+/* @import "./assets/fonts/SFProDisplay/index.css";
+@import "./assets/fonts/Montserrat/index.css"; */
 @import "./assets/fonts/ProximaNova/index.css";
 
 :root {
@@ -174,5 +183,13 @@ textarea,
 label,
 fieldset {
 	font-family: "Proxima Nova Rg", "Segoe UI", Tahoma, Verdana, sans-serif;
+}
+
+.marquee {
+	background: rgba(255, 221, 0);
+}
+.marquee span {
+	font-size: 16px;
+	margin: 0  10rem;
 }
 </style>

@@ -1,5 +1,5 @@
 <template>
-	<section class="stats">
+	<section id="stats" class="stats">
 		<div class="wrapper__stats">
 			<nav class="stats-nav">
 				<h2 class="stats__title">STATS 22-23</h2>
@@ -22,7 +22,7 @@
 				:showAverage="true"
 			/>
 			<BarStats
-				barName="PARTIDOS"
+				barName="PARTIDOS CONVOCADO"
 				:barNum="playedMatches"
 				:barIcon="barIconGoalNet"
 				:showTotalMatches="true"
@@ -39,7 +39,7 @@ import BarStats from "@/components/BarStats.vue";
 const barIconGoalNet = "/images/goal-net.svg";
 const barIconGoal = "/images/ball.svg";
 const barIconFootboots = "/images/football-boots.png";
-const playedMatches = 15;
+const playedMatches = 14;// +1 NO CONVOCADO
 const goals = 10;
 const asistGoals = 6;
 </script>

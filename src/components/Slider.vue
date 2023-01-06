@@ -1,9 +1,10 @@
 <template>
 	<section id="nike" class="patreon">
 		<h2 class="patreon__title">NIKE</h2>
-		<swiper>
+		<img class="patreon__swipe" src="/images/SWP-SLD01.gif" alt="slide gif" />
+		<swiper >
 			<swiper-slide v-for="video in videos">
-				<CardVideos
+				<CardVideos class="mySwipe"
 					:url="video.video"
 					:title="video.title"
 					:description="video.description"
@@ -44,6 +45,14 @@ onMounted(() => {
 }
 
 
+.patreon__swipe {
+	width: 60px;
+	padding-top: .5rem;
+	position: absolute;
+	z-index: 2;
+	right: 0;
+}
+
 .patreon__title {
 	color: white;
 	border-left: 8px solid white;
@@ -59,10 +68,14 @@ onMounted(() => {
 	top: 0;
 	left: 0;
 	width: 100%;
-	height: 100vh;
+	height: 100%;
 	z-index: -10;
 }
 
-@media only screen and (min-width: 1024px) {
+@media only screen and (min-width: 1200px) {
+	.mySwipe {
+	margin-top: 0;
+}
+
 }
 </style>

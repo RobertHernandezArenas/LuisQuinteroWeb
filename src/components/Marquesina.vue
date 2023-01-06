@@ -1,11 +1,14 @@
 <template>
 	<div class="wrapper">
-		<div class="news">
-			<h3>NEWS</h3>
-		</div>
+		<!-- <div class="news">
+			<h3>NOTICIAS</h3>
+		</div> -->
 
-		<MARQUEE class="marquee" DIRECTION="right">
-			<span><b>GOLES:</b>&nbsp;7</span>&nbsp;&nbsp;
+		<marquee class="marquee"  scrollamount="5">
+			<span> ⚠️🛠️ Web en construcción, subscribete al newsletter para estar pendiente a nuevas actualizaciones 🛠️⚠️ </span>
+			<span> ⚠️🛠️ Web en construcción, subscribete al newsletter para estar pendiente a nuevas actualizaciones 🛠️⚠️ </span>
+
+			<!-- <span><b>GOLES:</b>&nbsp;7</span>&nbsp;&nbsp;
 			<span><b>ASISTENCIAS:</b>&nbsp;8</span>&nbsp;&nbsp;
 			<span><b>MIN. JUGADOS:</b>&nbsp;895"</span>&nbsp;&nbsp;
 			<img class="marquee__team" :src="props?.score?.team_a?.image" :alt="props?.score?.team_a?.name" />&nbsp;
@@ -14,13 +17,12 @@
 			VS
 			<img class="marquee__team" :src="props?.score?.team_b?.image" :alt="props?.score?.team_b?.name" />
 			<span>{{ props?.score?.team_b?.name }}</span>&nbsp;
-			<span><b> {{ props?.score?.team_b?.result }}</b></span>
-		</MARQUEE>
+			<span><b> {{ props?.score?.team_b?.result }}</b></span> -->
+		</marquee>
 	</div>
 </template>
 
 <script setup>
-
 const props = defineProps({
 	score: {
 		team_a: {
@@ -40,31 +42,35 @@ const props = defineProps({
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	padding: 6.5rem 0 0 0;
 }
 .news {
 	display: none;
 	align-items: center;
-	background: yellow;
+	background: black;
 	height: 50px;
 }
 
 .news h3 {
-	color: black;
+	color: white;
 	padding: 4rem;
 }
 
 .marquee {
-	background: rgba(126, 126, 126, 0.4);
-	width: 85%;
+	background: rgba(255, 221, 0);
 }
+.marquee span {
+	font-size: 16px;
+	margin: 0  10rem;
+}
+
 .marquee__team {
 	width: 25px;
 }
 
 @media only screen and (min-width: 1024px) {
-
 	.news {
-	display: inline-flex;
-}
+		display: inline-flex;
+	}
 }
 </style>

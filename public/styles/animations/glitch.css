@@ -2,7 +2,7 @@
 	0%,
 	25.1%,
 	50% {
-		background: url("/images/animations/glitch-fx/LUIS-VILLARREAL.png");
+		background: url("/images/animations/glitch-fx/LUIS-VILLARREAL.webp");
 		background-size: cover;
 		background-position: center;
 		/* background-size: 380px; */
@@ -10,7 +10,7 @@
 	}
 
 	20% {
-		background: url("/images/animations/glitch-fx/glitch-1.png");
+		background: url("/images/animations/glitch-fx/glitch-1.webp");
 		background-size: cover;
 		background-position: center;
 		/* background-size: 380px; */
@@ -18,7 +18,7 @@
 	}
 
 	22.5% {
-		background: url("/images/animations/glitch-fx/glitch-2.png");
+		background: url("/images/animations/glitch-fx/glitch-2.webp");
 		background-size: cover;
 		background-position: center;
 		/* background-size: 380px; */
@@ -26,7 +26,7 @@
 	}
 
 	25% {
-		background: url("/images/animations/glitch-fx/glitch-3.png");
+		background: url("/images/animations/glitch-fx/glitch-3.webp");
 		background-size: cover;
 		background-position: center;
 		/* background-size: 380px; */
@@ -36,28 +36,28 @@
 	51%,
 	55.1%,
 	100% {
-		background: url("/images/animations/glitch-fx/LUIS-COLOMBIA.png");
+		background: url("/images/animations/glitch-fx/LUIS-COLOMBIA.webp");
 		background-size: cover;
 		background-position: center;
 		background-repeat: no-repeat;
 	}
 
 	50% {
-		background: url("/images/animations/glitch-fx/glitch-4.png");
+		background: url("/images/animations/glitch-fx/glitch-4.webp");
 		background-size: cover;
 		background-position: center;
 		background-repeat: no-repeat;
 	}
 
 	52.5% {
-		background: url("/images/animations/glitch-fx/glitch-5.png");
+		background: url("/images/animations/glitch-fx/glitch-5.webp");
 		background-size: cover;
 		background-position: center;
 		background-repeat: no-repeat;
 	}
 
 	55% {
-		background: url("/images/animations/glitch-fx/glitch-6.png");
+		background: url("/images/animations/glitch-fx/glitch-6.webp");
 		background-size: cover;
 		background-position: center;
 		background-repeat: no-repeat;

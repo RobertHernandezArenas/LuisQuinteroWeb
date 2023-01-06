@@ -40,6 +40,7 @@ onMounted(() => {
 	justify-content: center;
 	padding: 2rem 1rem;
 	height: 100vh;
+	
 }
 
 .cardvideos__video {

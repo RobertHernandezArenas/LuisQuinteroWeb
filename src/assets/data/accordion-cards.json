@@ -1,38 +1,38 @@
 {
     "accordion": [
         {
-            "description": "LQ10 (Hashtag-ele-cú-diez) Lorem ipsum dolor sit amet consectetur.",
-            "image": "/images/accordion/ACC00.jpg",
+            "description": "Luis Quintero fue elegido para ir de gira a Turquia con el primer equipo de Villarreal CF.",
+            "image": "/images/accordion/luis-quintero-villarreal-00.jpg",
             "readMore": "Seguir leyendo ➔",
-            "title": "#LQ10 MY BRAND",
+            "title": "LUIS QUINTERO DEBUTA CON EL PRIMER EQUIPO.",
             "url": "#"
         },
         {
-            "description": "La empresa multinacional nº 1 de ropa deportiva renueva a Quintero.",
-            "image": "/images/accordion/ACC07.jpg",
+            "description": "Luis Quintero renueva contrato con el Villarreal CF hasta la temporada 2026 tras su gran crecimiento en la presente temporada.",
+            "image": "/images/accordion/luis-quintero-villarreal-05.jpg",
             "readMore": "Seguir leyendo ➔",
-            "title": "¡ENDAVANT, VILLARREAL!",
+            "title": "LUIS QUINTERO RENUEVA HASTA 2026.",
             "url": "#"
         },
         {
-            "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-            "image": "/images/accordion/ACC03.jpg",
+            "description": "Aquí podrás encontrar fotos, videos y noticias.",
+            "image": "/images/accordion/luis-quintero-villarreal-02.jpg",
             "readMore": "Seguir leyendo ➔",
-            "title": "BIENVENIDOS...",
+            "title": "BIENVENIDOS A MI WEB",
             "url": "#"
         },
         {
-            "description": "La empresa multinacional nº 1 de ropa deportiva renueva a Quintero.",
-            "image": "/images/accordion/ACC06.jpg",
+            "description": "La empresa multinacional nº 1 de ropa deportiva renueva a Quintero para representar su marca.",
+            "image": "/images/accordion/luis-quintero-villarreal-06.jpg",
             "readMore": "Seguir leyendo ➔",
-            "title": "EMBAJADOR NIKE",
+            "title": "LUIS QUINTERO RENUEVA CONTRATO CON NIKE.",
             "url": "#"
         },
         {
-            "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-            "image": "/images/accordion/ACC04.jpg",
+            "description": "Luis Quintero debutó en Tercera RFEF con el Villarreal \"C\" con tan solo 17 años, entrando en el minuto 70 y dando una asistencia de gol.",
+            "image": "/images/accordion/luis-quintero-villarreal-03.jpg",
             "readMore": "Seguir leyendo ➔",
-            "title": "Titulo Luisito H3",
+            "title": "LUIS QUINTERO DEBUTA EN 3ª RFEF.",
             "url": "#"
         }
     ]

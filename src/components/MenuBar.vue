@@ -12,7 +12,8 @@
 					<li><a href="#">Inicio</a></li>
 					<li><a href="#biografia">Biografia</a></li>
 					<li><a href="#nike">Nike</a></li>
-					<li><a href="#galeria">Galeria</a></li>
+					<!-- <li><a href="#galeria">Galeria</a></li> -->
+					<li><a href="#stats">Stats</a></li>
 					<li><a href="#contacto">Contacto</a></li>
 				</ul>
 				<ButtonMenu
@@ -128,11 +129,11 @@ onMounted(() => {
 	margin: 2rem 2rem 0 0;
 	height: 30px;
 	transform: rotate(0);
-	transition: transform 0.45s ease-in-out;
+	transition: transform 0.65s ease-in-out;
 }
 .nav-mobile__close-button.fx {
 	transform: rotate(270deg);
-	transition: transform 0.45s ease-in-out;
+	transition: transform 0.65s ease-in-out;
 }
 
 .nav-mobile__links {

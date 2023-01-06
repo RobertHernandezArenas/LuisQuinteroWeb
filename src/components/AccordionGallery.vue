@@ -37,7 +37,8 @@ onMounted(() => {
 	display: -ms-flexbox;
 	display: flex;
 	height: calc(100vh - 112px);
-	margin: 6.6rem 0 .5rem 0;/* 6.625rem */
+	/* margin: 6.6rem 0 .5rem 0; */
+	margin: .6rem 0 .5rem 0;
 	gap: 0.5rem;
 	overflow: scroll;
 	-ms-scroll-snap-type: x mandatory;
@@ -94,13 +95,13 @@ onMounted(() => {
 
 h3.accordion__title {
 	font-weight: 700;
-	font-size: 1.5rem;
+	font-size: 1.3rem;
 	margin: 0 1rem 0.75rem 1rem;
 }
 
 .accordion__description {
 	line-height: 1.3rem;
-	font-size: 16px;
+	font-size: 14px;
 	margin: 0 1rem 0.75rem 1rem;
 }
 
