@@ -1,4 +1,4 @@
-import newsletter from '@/components/FooterX.vue';
+
 <template>
 	<section class="newsletter">
 		<form class="newsletter-form">

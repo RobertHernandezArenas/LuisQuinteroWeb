@@ -57,7 +57,7 @@ const props = defineProps({
 }
 
 .marquee {
-	background: rgba(255, 221, 0);
+	background: #ffdd00;
 }
 .marquee span {
 	font-size: 16px;

@@ -49,7 +49,7 @@
 
 <script setup>
 import { onMounted, computed, ref, watch, reactive } from "vue";
-import ButtonMenu from "@/components/icons/ButtonMenu.vue";
+import ButtonMenu from "./icons/ButtonMenu.vue";
 
 const logo = ref("/images/web-logo/light-logo.png");
 const color = ref("#FFFFFF");
@@ -186,6 +186,7 @@ onMounted(() => {
 	font-size: 1rem;
 	font-family: "Proxima Nova Rg", "Segoe UI", Tahoma, Geneva, Verdana,
 		sans-serif;
+	font-display: swap;
 }
 .navigation .logo a {
 	font-weight: 500;

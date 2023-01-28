@@ -2,9 +2,10 @@
 	<section id="nike" class="patreon">
 		<h2 class="patreon__title">NIKE</h2>
 		<img class="patreon__swipe" src="/images/SWP-SLD01.gif" alt="slide gif" />
-		<swiper >
+		<swiper>
 			<swiper-slide v-for="video in videos">
-				<CardVideos class="mySwipe"
+				<CardVideos
+					class="mySwipe"
 					:url="video.video"
 					:title="video.title"
 					:description="video.description"
@@ -26,8 +27,8 @@
 
 <script setup>
 import { ref, onMounted } from "vue";
-import data from "@/assets/data/patreon.json";
-import CardVideos from "@/components/CardVideos.vue";
+import data from "../assets/data/patreon.json";
+import CardVideos from "./CardVideos.vue";
 
 // Import Swiper Vue.js components
 import { Swiper, SwiperSlide } from "swiper/vue";
@@ -44,10 +45,9 @@ onMounted(() => {
 	padding-top: 1rem;
 }
 
-
 .patreon__swipe {
 	width: 60px;
-	padding-top: .5rem;
+	padding-top: 0.5rem;
 	position: absolute;
 	z-index: 2;
 	right: 0;
@@ -74,8 +74,7 @@ onMounted(() => {
 
 @media only screen and (min-width: 1200px) {
 	.mySwipe {
-	margin-top: 0;
-}
-
+		margin-top: 0;
+	}
 }
 </style>

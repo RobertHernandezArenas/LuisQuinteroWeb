@@ -16,8 +16,7 @@
 <script setup>
 import { onMounted, ref } from "vue";
 import { gsap } from "gsap";
-import Button from "@/components/Button.vue";
-
+import Button from "./Button.vue";
 
 const nike = ref({
 	title: "JUST DO IT",
@@ -47,9 +46,7 @@ onMounted(() => {
 	display: flex;
 	flex-wrap: wrap;
 	max-width: 1920px;
-	
 }
-
 
 .nike__video {
 	margin: 0 auto;
@@ -89,7 +86,6 @@ onMounted(() => {
 		width: 90vw;
 		margin: 0 auto;
 	}
-
 
 	.nike__video {
 		max-width: 612px;

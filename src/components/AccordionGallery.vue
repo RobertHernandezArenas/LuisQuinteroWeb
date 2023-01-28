@@ -7,7 +7,7 @@
 			:style="bgCard(article.image)"
 		>
 			<div class="accordion__container">
-				<h3 class="accordion__title">{{ article.title.toUpperCase() }}</h3>
+				<h2 class="accordion__title">{{ article.title.toUpperCase() }}</h2>
 				<p class="accordion__description">
 					{{ article.description.slice(0, 150) }}
 				</p>
@@ -18,7 +18,7 @@
 
 <script setup>
 import { ref, onMounted, computed } from "vue";
-import data from "@/assets/data/accordion-cards.json";
+import data from "../assets/data/accordion-cards.json";
 
 const cards = ref([]);
 
@@ -123,8 +123,8 @@ h3.accordion__title {
 		display: flex;
 		-webkit-filter: grayscale(70%);
 		filter: grayscale(70%);
-		-webkit-transition: width 0.85s ease-in-out;
-		transition: width 0.85s ease-in-out;
+		-webkit-transition: width 0.65s ease-in-out;
+		transition: width 0.65s ease-in-out;
 		scroll-snap-align: unset;
 		/* max-height: 750px; */
 	}

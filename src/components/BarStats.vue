@@ -66,6 +66,7 @@ onMounted(() => {
 
 	font-weight: bold;
 	font-family: "Proxima Nova", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+	font-display: swap;
 	font-size: 0.9rem;
 	padding-left: 0.5rem;
 }

@@ -6,7 +6,7 @@
 </template>
 
 <script setup>
-import BiographySecton from "@/components/BiographySection.vue";
+import BiographySecton from "./BiographySection.vue";
 </script>
 
 <style scoped>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Accordion Gallery</title>
+	</head>
+
+	<style>
+		.accordion {
+			display: flex;
+			overflow: scroll;
+			scroll-snap-type: x mandatory;
+			position: relative;
+		}
+
+		.accordion .card {
+			flex: 1;
+			object-fit: cover;
+			width: min-content;
+			height: 460px;
+			transition: all 0.45s ease-in-out;
+			scroll-snap-align: center;
+		}
+
+		/* Se debe jugar con la ancho y altura de las imagenes para lograr el resultado esperado*/
+		.accordion .card img {
+			display: block;
+			max-width: 100%;
+		}
+
+		.accordion .card:hover {
+			flex: 10;
+			transition: all 0.45s ease-in-out;
+		}
+
+		.accordion .card:hover img:hover {
+			flex: 8;
+			width: 100%;
+			transition: all 0.45s ease-in-out;
+		}
+
+		.accordion div.description h2.title {
+			position: absolute;
+			z-index: 33;
+			color: aqua;
+		}
+		@media only screen and (min-width: 768px) {
+			.accordion {
+				overflow: auto;
+			}
+
+			.accordion .card {
+				height: 720px;
+			}
+
+			.accordion .card:hover,
+			.accordion .card:hover img:hover, .accordion .card:nth-child(3) {
+				flex: 4;
+			}
+
+
+		}
+
+		@media only screen and (min-width: 1200px) {
+
+			.accordion .card {
+				background-color: black;
+			}
+
+			.accordion .card:hover,
+			.accordion .card:hover img:hover {
+				flex: 2;
+				object-fit: contain;
+				overflow: hidden;
+				transition: all 0.45s ease-in-out;
+			}
+			
+		}
+
+	</style>
+	<body>
+		<div class="accordion">
+			<div class="card">
+				<img
+					src="./public/images/accordion/luis-quintero-villarreal-00.jpg"
+					class="card"
+					alt="imagen"
+				/>
+			</div>
+			<div class="card">
+				<img
+					src="./public/images/accordion/luis-quintero-villarreal-05.jpg"
+					class="card"
+					alt="imagen"
+				/>
+			</div>
+
+			<div class="card">
+				<img
+					src="./public/images/accordion/luis-quintero-villarreal-02.jpg"
+					class="card"
+					alt="imagen"
+				/>
+			</div>
+			<div class="card">
+				<img
+					src="./public/images/accordion/luis-quintero-villarreal-06.jpg"
+					class="card"
+					alt="imagen"
+				/>
+			</div>
+			<div class="card">
+				<img
+					src="./public/images/accordion/luis-quintero-villarreal-03.jpg"
+					class="card"
+					alt="imagen"
+				/>
+			</div>
+		</div>
+	</body>
+</html>

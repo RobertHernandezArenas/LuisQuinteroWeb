@@ -3,6 +3,7 @@
         {
             "description": "Luis Quintero fue elegido para ir de gira a Turquia con el primer equipo de Villarreal CF.",
             "image": "/images/accordion/luis-quintero-villarreal-00.jpg",
+            "type": "image",
             "readMore": "Seguir leyendo ➔",
             "title": "LUIS QUINTERO DEBUTA CON EL PRIMER EQUIPO.",
             "url": "#"
@@ -10,6 +11,7 @@
         {
             "description": "Luis Quintero renueva contrato con el Villarreal CF hasta la temporada 2026 tras su gran crecimiento en la presente temporada.",
             "image": "/images/accordion/luis-quintero-villarreal-05.jpg",
+            "type": "image",
             "readMore": "Seguir leyendo ➔",
             "title": "LUIS QUINTERO RENUEVA HASTA 2026.",
             "url": "#"
@@ -17,6 +19,7 @@
         {
             "description": "Aquí podrás encontrar fotos, videos y noticias.",
             "image": "/images/accordion/luis-quintero-villarreal-02.jpg",
+            "type": "image",
             "readMore": "Seguir leyendo ➔",
             "title": "BIENVENIDOS A MI WEB",
             "url": "#"
@@ -24,6 +27,7 @@
         {
             "description": "La empresa multinacional nº 1 de ropa deportiva renueva a Quintero para representar su marca.",
             "image": "/images/accordion/luis-quintero-villarreal-06.jpg",
+            "type": "image",
             "readMore": "Seguir leyendo ➔",
             "title": "LUIS QUINTERO RENUEVA CONTRATO CON NIKE.",
             "url": "#"
@@ -31,6 +35,7 @@
         {
             "description": "Luis Quintero debutó en Tercera RFEF con el Villarreal \"C\" con tan solo 17 años, entrando en el minuto 70 y dando una asistencia de gol.",
             "image": "/images/accordion/luis-quintero-villarreal-03.jpg",
+            "type": "image",
             "readMore": "Seguir leyendo ➔",
             "title": "LUIS QUINTERO DEBUTA EN 3ª RFEF.",
             "url": "#"

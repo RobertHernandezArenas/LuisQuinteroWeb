@@ -8,7 +8,7 @@ import router from "./router";
 import axios from "axios";
 import VueAxios from "vue-axios";
 
-const baseURL = "https://luisquinterojr.com";
+const baseURL = "https://luisquintero.website/";
 axios.defaults.baseURL = baseURL;
 
 const app = createApp(App);

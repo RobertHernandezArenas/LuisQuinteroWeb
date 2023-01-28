@@ -1,84 +1,83 @@
 <template>
-	<form
-		@submit.prevent="sendEmail(message)"
-		id="contacto"
-		class="contact"
-	>
-		<atom-spinner
-			v-if="isVisible"
-			:animation-duration="1000"
-			:size="60"
-			color="#E0AE00"
+	<div class="container-contact">
+		<LoadingIcon
+			width="60px"
+			height="60px"
+			stroke="#FFFFFF"
+			:isShow="isVisible"
 		/>
-		<h2 class="contact__title">CONTACTO</h2>
 
-		<div class="contact__form">
-			<input
-				v-model="message.name"
-				id="name"
-				name="name"
-				class="contact__form-input"
-				type="text"
-				placeholder=" "
-				autocomplete="off"
-				required
-			/>
-			<label for="name" class="contact__form-label">Nombre Completo</label>
+		<div class="image-section">
+			<img :src="section.image" alt="" class="" />
 		</div>
 
-		<div class="contact__form">
-			<input
-				v-model="message.email"
-				id="email"
-				name="email"
-				class="contact__form-input"
-				type="email"
-				placeholder=" "
-				autocomplete="off"
-				required
-			/>
-			<label for="email" class="contact__form-label">Email</label>
-		</div>
+		<form @submit.prevent="sendEmail(message)" id="contacto" class="contact">
+			<h1>{{ section.name }}</h1>
+			<div class="contact__form">
+				<input
+					v-model="message.name"
+					id="name"
+					name="name"
+					class="contact__form-input"
+					type="text"
+					placeholder="Nombre completo"
+					autocomplete="off"
+					required
+				/>
+			</div>
 
-		<div class="contact__form">
-			<input
-				v-model="message.subject"
-				id="subject"
-				name="subject"
-				class="contact__form-input"
-				type="text"
-				placeholder=" "
-				autocomplete="off"
-				required
-			/>
-			<label for="subject" class="contact__form-label">Asunto</label>
-		</div>
+			<div class="contact__form">
+				<input
+					v-model="message.email"
+					id="email"
+					name="email"
+					class="contact__form-input"
+					type="email"
+					placeholder="Email"
+					autocomplete="off"
+					required
+				/>
+			</div>
 
-		<div class="contact__form">
-			<label for="message" class="contact-form__label">Mensaje</label>
-			<textarea
-				v-model="message.message"
-				class="contact__form-txt-area"
-				id="message"
-				name="message"
-			></textarea>
-		</div>
+			<div class="contact__form">
+				<input
+					v-model="message.subject"
+					id="subject"
+					name="subject"
+					class="contact__form-input"
+					type="text"
+					placeholder="Asunto"
+					autocomplete="off"
+					required
+				/>
+			</div>
 
-		<div class="contact__form">
-			<button
-				@submit.prevent="sendEmail(message)"
-				class="contact__form-button"
-			>
-				Enviar
-			</button>
-		</div>
-	</form>
+			<div class="contact__form">
+				<textarea
+					v-model="message.message"
+					class="contact__form-txt-area"
+					id="message"
+					name="message"
+					placeholder="Escribe tu mensaje..."
+				></textarea>
+			</div>
+
+			<div class="contact__form">
+				<button
+					@submit.prevent="sendEmail(message)"
+					class="contact__form-button"
+				>
+					{{ section.btn_name }}
+				</button>
+			</div>
+		</form>
+	</div>
 </template>
 
 <script setup>
 import axios from "axios";
 import { ref, onMounted } from "vue";
-import { AtomSpinner } from "epic-spinners";
+import LoadingIcon from "../components/icons/LoadingIcon.vue";
 
 const isVisible = ref(false);
 
@@ -88,19 +87,25 @@ const message = ref({
 	subject: "",
 	message: "",
 });
+
+const section = ref({
+	name: "CONTACTO",
+	image: "/images/luis-quintero-email.jpg",
+	btn_name: "ENVIAR",
+});
 const sendEmail = async message => {
 	try {
-		let response = await axios.post(`users/message`, message);
 		isVisible.value = true;
-		if (response.data.status == 200) {
-			message.name = "";
-			message.email = "";
-			message.subject = "";
-			message.message = "";
-		}
+		await axios.post(`users/message`, message);
+
+		message.name = "";
+		message.email = "";
+		message.subject = "";
+		message.message = "";
+
+		isVisible.value = false;
 	} catch (error) {
 		console.log(error.message);
-	} finally {
 		isVisible.value = false;
 	}
 };
@@ -123,144 +128,117 @@ onMounted(async () => {
 </script>
 
 <style scoped>
-.contact {
+.container-contact {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
-	gap: 16px;
-	flex-direction: column;
 	align-items: center;
+}
+.contact h1 {
+	margin: 0.5rem 0;
+	font-size: 3.5rem;
+}
+.image-section {
+	background-image: url("/images/luis-quintero-email.jpg");
+	background-position: top;
+	background-repeat: no-repeat;
+	background-size: cover;
 	width: 100vw;
-	height: auto;
-	position: relative;
-	margin: 1rem 0 6rem 0;
-	padding-top: 75px;
+	height: 380px;
 }
 
-.contact__title {
-	margin: 1rem;
-	font-size: 2.625rem;
-	font-weight: 800;
-	padding-left: 1rem;
-	border-left: var(--mainColor) 8px solid;
+.image-section img {
+	display: block;
+	max-width: 100%;
+	max-height: 100%;
+	opacity: 0;
 }
 
-.contact .contact__form {
-	display: flex;
-	flex-direction: column;
-	position: relative;
-	height: 3rem;
-	width: 90%;
-}
-
-.contact .contact__form:nth-child(5) {
+.contact {
+	padding: 1rem;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	width: 90%;
-	height: 10rem;
+	max-width: 768px;
 }
 
-.contact__form-input {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	border: 3px solid black;
-	border-radius: 2px;
-	outline: none;
-	padding: 1rem;
-	background: none;
-	color: black;
-	font-size: 16px;
-}
-
-.contact__form-input:-webkit-autofill,
-.contact__form-input:-webkit-autofill:hover,
-.contact__form-input:-webkit-autofill:focus {
-	box-shadow: 0 0 0px 1000px transparent inset;
-}
-
-.contact__form-input:-webkit-autofill {
-	-webkit-text-fill-color: black;
-}
-
-.contact__form-input:-webkit-autofill:focus ~ .contact__form-label {
-	color: rgb(0, 0, 0);
-}
-
-.contact__form-input:hover,
-.contact__form-txt-area:hover {
-	border-color: 3px solid black;
-}
-
-.contact__form-input:focus,
-.contact__form-txt-area:focus {
-	/* border-color: rgb(0, 98, 107); */
-}
-
-.contact__form-label {
-	position: absolute;
-	left: 1rem;
-	top: 0.8rem;
-	padding: 0 0.5rem;
-	color: black;
-	cursor: text;
-	transition: top 0.25s ease-in, left 0.25s ease-in, font-size 0.25s ease-in;
-	background: white;
-	font-size: 16px;
-	font-weight: 600;
-}
-
-.contact__form-input:focus ~ .contact__form-label,
-.contact__form-input:not(:placeholder-shown).contact__form-input:not(:focus)
-	~ .contact__form-label {
-	top: -0.4rem;
-	font-size: 0.8rem;
-	left: 0.9rem;
-	background-color: white;
-	border-radius: 0.25rem;
+.contact .contact__form-input {
+	font-family: "Rajdhani", "Proxima Nova Bl", "Segoe UI", Tahoma, Verdana,
+		sans-serif;
+	font-size: 1rem;
+	border: 2px solid black;
+	border-radius: 0.15rem;
+	padding: 0.65rem 1rem;
+	margin: 0.5rem 0;
+	width: 85vw;
 }
 
 .contact__form-txt-area {
-	width: 100%;
-	height: 10rem;
-	background: transparent;
-	color: black;
-	padding: 1rem;
-	font-weight: 400;
-	font-size: 16px;
-	border: 3px solid black;
+	font-size: 1rem;
+	border: 2px solid black;
+	border-radius: 0.15rem;
+	padding: 0.65rem 1rem;
+	margin: 0.5rem 0;
+	width: 85vw;
+	height: 150px;
 }
 
-.contact__form-button {
-	padding: 0.5rem 0;
-	outline: none;
-	background: black;
+.contact__form .contact__form-button {
 	color: white;
-	font-size: 1rem;
+	background: black;
+	padding: 0.75rem 2rem;
+	border-radius: 0.15rem;
 	font-weight: 600;
-	padding: 1rem 5rem;
+	width: 85vw;
 }
 
 @media only screen and (min-width: 768px) {
-	.contact {
+
+	
+	.image-section {
+		width: 100vw;
+		height: 400px;
+	}
+	
+	.contact__form .contact__form-button {
+		padding: 1rem 2rem;
+	}
+
+	.contact__form .contact__form-button,
+	.contact .contact__form-input,
+	.contact__form-txt-area,
+	.contact__form .contact__form-button {
+		max-width: 380px; /*320x480 resolucion iPhone 4*/
+	}
+}
+
+@media only screen and (min-width: 1024px) {
+	.image-section {
+		width: 512px;
 		height: 100vh;
 	}
 
-	.contact .contact__form,
-	.contact .contact__form:nth-child(5) {
-		width: 40rem;
+	.image-section img {
+		height: 100vh;
 	}
 
-	.contact__title {
-		font-size: 78px;
+	.contact {
+		max-width: 450px;
+		margin: 0 auto;
 	}
 
-	.contact__form-txt-area {
-		font-size: 16px;
+	@media only screen and (min-width: 1200px) {
+		.image-section {
+			width: 720px;
+		}
+
+		.contact__form .contact__form-button,
+		.contact .contact__form-input,
+		.contact__form-txt-area,
+		.contact__form .contact__form-button {
+			max-width: 480px; /*320x480 resolucion iPhone 4*/
+		}
 	}
 }
 </style>

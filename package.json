@@ -11,21 +11,26 @@
     "test:e2e:dev": "start-server-and-test 'vite dev --port 4173' :4173 'cypress open --e2e'"
   },
   "dependencies": {
-    "pinia": "^2.0.26",
-    "vue": "^3.2.45",
-    "vue-router": "^4.1.6",
     "axios": "^1.1.2",
+    "cssnano": "^5.1.14",
     "epic-spinners": "^2.0.0",
+    "pinia": "^2.0.26",
     "swiper": "^8.3.2",
-    "vue-axios": "^3.4.1"
+    "vue": "^3.2.45",
+    "vue-axios": "^3.4.1",
+    "vue-router": "^4.1.6"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^3.2.0",
     "@vitejs/plugin-vue-jsx": "^2.1.1",
     "@vue/test-utils": "^2.2.4",
+    "css-minimizer-webpack-plugin": "^4.2.2",
     "cypress": "^11.2.0",
+    "imagemin-webp-webpack-plugin": "^3.3.6",
+    "imagemin-webpack-plugin": "^2.4.2",
     "jsdom": "^20.0.3",
     "start-server-and-test": "^1.14.0",
+    "terser-webpack-plugin": "^5.3.6",
     "vite": "^3.2.4",
     "vitest": "^0.25.3"
   }

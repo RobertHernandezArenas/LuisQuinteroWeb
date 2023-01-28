@@ -5,7 +5,7 @@
 </template>
 
 <script setup>
-import AccordionGallery from "../components/AccordionGallery.vue";
+import AccordionGallery from "../AccordionGallery.vue";
 </script>
 
 <style scoped>
