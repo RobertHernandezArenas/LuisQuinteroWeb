@@ -1,7 +1,7 @@
 <template>
 	<div id="calendario" class="countdown__container">
 		<div class="countdown__match">
-			<h3 class="countdown__next-match">PRÓXIMO <span>PARTIDO</span></h3>
+			<p class="countdown__next-match">PRÓXIMO <span>PARTIDO</span></p>
 		</div>
 		<div class="countdown">
 			<div v-if="days" class="countdown__block">
@@ -125,7 +125,7 @@ onMounted(() => {
 	align-items: center;
 }
 
-.countdown__match h3.countdown__next-match {
+.countdown__match p.countdown__next-match {
 	font-size: 1.5rem;
 	color: var(--secondaryColor);
 	font-style: italic;
@@ -133,7 +133,7 @@ onMounted(() => {
 	font-display: swap;
 }
 
-.countdown__match h3.countdown__next-match span {
+.countdown__match p.countdown__next-match span {
 	color: white;
 	font-size: 1.5rem;
 }

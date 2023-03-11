@@ -1,12 +1,7 @@
 <template>
-    <section class="gallerySection">
-        <head class="gallery__head">
-            <h1 class="gallery__head-title">
-                GALERIA
-            </h1>
-        </head>
-        
-    </section>
+  <div class="gallery">
+    <h1>GALERIA</h1>
+  </div>
 </template>
 
 <script setup>
@@ -14,5 +9,7 @@
 </script>
 
 <style scoped>
-
+.gallery {
+  height: 100vh;
+}
 </style>

@@ -1,63 +1,108 @@
 <template>
-	<header>
+	<header class="header">
 		<nav class="navigation">
 			<div class="nav-content">
 				<div class="logo">
-					<a class="logo__router-link" href="#">
-						<img :src="logo" alt="Logo" class="logo__image" />
+					<router-link to="/" class="logo__router-link">
+						<img :src="logo" alt="Logo" class="logo__image" width="40" height="40" />
 						<h1 class="title">LUIS QUINTERO</h1>
-					</a>
+					</router-link>
 				</div>
 				<ul class="nav-links">
-					<li><a href="#">Inicio</a></li>
-					<li><a href="#biografia">Biografia</a></li>
-					<li><a href="#nike">Nike</a></li>
-					<!-- <li><a href="#galeria">Galeria</a></li> -->
-					<li><a href="#stats">Stats</a></li>
-					<li><a href="#contacto">Contacto</a></li>
+					<li>
+						<router-link class="router-link" active-class="active" to="/"
+							>Inicio</router-link
+						>
+					</li>
+					<li>
+						<router-link
+							class="router-link"
+							active-class="active"
+							to="/biografia"
+							>Biografia</router-link
+						>
+					</li>
+
+					<li>
+						<router-link
+							class="router-link"
+							active-class="active"
+							to="/galeria"
+							>Galeria</router-link
+						>
+					</li>
+					<li>
+						<router-link
+							class="router-link"
+							active-class="active"
+							to="/contacto"
+							>Contacto</router-link
+						>
+					</li>
 				</ul>
 				<ButtonMenu
 					@click="menuFX"
 					:width="width"
 					:height="height"
-					:color="color"
+					:fill="fill"
 				/>
-			</div>
-
-			<div class="nav-mobile">
-				<img
-					@click="menuFX"
-					src="/images/icons/close-btn.png"
-					alt=""
-					class="nav-mobile__close-button"
-				/>
-				<a @click="menuFX" href="#" class="nav-mobile__links">Inicio</a>
-				<a @click="menuFX" href="#biografia" class="nav-mobile__links"
-					>Biografia</a
-				>
-				<a @click="menuFX" href="#nike" class="nav-mobile__links">Nike</a>
-				<a @click="menuFX" href="#galeria" class="nav-mobile__links"
-					>Galeria</a
-				>
-				<a @click="menuFX" href="#contacto" class="nav-mobile__links"
-					>Contacto</a
-				>
 			</div>
 		</nav>
+
+		<div class="nav-mobile">
+			<ButtonClose
+				@click="menuFX"
+				width="40"
+				height="40"
+				fill="#FFFFFF"
+				class="nav-mobile__close-button"
+			/>
+			<router-link
+				class="router-link nav-mobile-links"
+				active-class="active"
+				@click="menuFX"
+				to="/"
+				>Inicio</router-link
+			>
+			<router-link
+				class="router-link nav-mobile-links"
+				active-class="active"
+				@click="menuFX"
+				to="/biografia"
+				>Biografia</router-link
+			>
+			<router-link
+				class="router-link nav-mobile-links"
+				active-class="active"
+				@click="menuFX"
+				to="/galeria"
+				>Galeria</router-link
+			>
+			<router-link
+				class="router-link nav-mobile-links"
+				active-class="active"
+				@click="menuFX"
+				to="/contacto"
+				>Contacto</router-link
+			>
+		</div>
 	</header>
 </template>
 
 <script setup>
 import { onMounted, computed, ref, watch, reactive } from "vue";
 import ButtonMenu from "./icons/ButtonMenu.vue";
+import ButtonClose from "./icons/ButtonClose.vue";
 
 const logo = ref("/images/web-logo/light-logo.png");
-const color = ref("#FFFFFF");
-const width = ref("25px");
-const height = ref("25px");
+const fill = ref("#FFFFFF");
+const width = ref("35px");
+const height = ref("35px");
+
 const menuFX = e => {
 	let mobileNav = document.querySelector(".nav-mobile");
 	let closeFx = document.querySelector(".nav-mobile__close-button");
+
 	mobileNav.classList.toggle("show-nav-mobile");
 	closeFx.classList.toggle("fx");
 
@@ -73,53 +118,56 @@ onMounted(() => {
 			nav.classList.add("sticky");
 			title.classList.add("black");
 			logo.value = "/images/web-logo/dark-logo.png";
-			color.value = "#000000";
+			fill.value = "#000000";
+			nav.fill = "#FFFFFF";
 		} else {
 			title.classList.remove("black");
 			nav.classList.remove("sticky");
 			logo.value = "/images/web-logo/light-logo.png";
-			color.value = "#FFFFFF";
+			fill.value = "#FFFFFF";
 		}
 	});
 });
 </script>
 
 <style scoped>
+.header {
+	height: 80px;
+
+}
 .navigation .logo .logo__router-link h1.title.black {
 	color: black;
 }
 
 .nav-mobile {
-	padding: 2rem;
 	background: black;
-	background: url("/images/luis-desafiante.png"),
-		url("/images/stadiums/STDM04.jpg");
-	background-position: -50px, center;
-	background-size: contain, cover;
-	background-repeat: no-repeat;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	/* padding-bottom: 76px; */
-	gap: 0.5rem;
-	position: fixed;
-	width: 100vw;
-	height: 100vh;
+	position: absolute;
 	top: 0;
 	left: 0;
+	z-index: 20;
+	gap: 1.5rem;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
 	transform: translateX(-100%);
-	/* transition: all 0.75s ease-in-out; */
-	transition: all 500ms cubic-bezier(1, -0.1, 0, 0.78); /* custom */
-	transition-timing-function: cubic-bezier(1, -0.1, 0, 0.78); /* custom */
-	z-index: 0;
-	overflow: hidden;
-	inset: 0;
+	transition: all 0.35s ease-in-out;
+}
+
+.nav-mobile-links {
+	font-weight: 700;
+	font-size: 1.5rem;
 }
 
 .nav-mobile.show-nav-mobile {
+	opacity: 1;
+	position: fixed;
+
 	transform: translateX(0%);
-	transition: all 0.65s ease-in-out;
+	transition: all 0.35s ease-in-out;
 }
 
 .nav-mobile__close-button {
@@ -127,36 +175,32 @@ onMounted(() => {
 	top: 0;
 	right: 0;
 	margin: 2rem 2rem 0 0;
-	height: 30px;
 	transform: rotate(0);
-	transition: transform 0.65s ease-in-out;
+	transition: transform 0.35s ease-in-out;
 }
 .nav-mobile__close-button.fx {
 	transform: rotate(270deg);
-	transition: transform 0.65s ease-in-out;
+	transition: transform 0.35s ease-in-out;
 }
 
-.nav-mobile__links {
-	font-weight: 700;
+.router-link {
 	color: #fff;
 	text-decoration: none;
 }
 
 .navigation {
 	background: var(--mainColor);
-	/*height: 72px;*/
-	/*max-height: 100px;*/
-	padding: 20px;
-	position: fixed;
-	left: 0;
-	top: 0;
+	padding: 20px 40px;
 	transition: padding 0.65s ease-in-out;
-	width: 100vw;
+	width: 100%;
 	z-index: 10;
 }
 
 .navigation.sticky {
-	padding: 10px 20px;
+	position: fixed;
+	left: 0;
+	top: 0;
+	padding: 25px 40px;
 	background: white;
 	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
 }
@@ -181,12 +225,10 @@ onMounted(() => {
 }
 
 .navigation .logo .logo__router-link h1.title {
-	font-weight: bold;
 	color: white;
 	font-size: 1rem;
-	font-family: "Proxima Nova Rg", "Segoe UI", Tahoma, Geneva, Verdana,
-		sans-serif;
-	font-display: swap;
+	font-family: "Poppins", "Proxima Nova Rg", "Segoe UI", Tahoma, Geneva,
+		Verdana, sans-serif;
 }
 .navigation .logo a {
 	font-weight: 500;
@@ -198,7 +240,7 @@ onMounted(() => {
 }
 
 .logo__image {
-	width: 55px;
+	width: 40px;
 }
 .nav-content .nav-links {
 	display: none;
@@ -215,9 +257,23 @@ onMounted(() => {
 	padding: 10px 4px;
 	transition: all 0.3s ease;
 }
-.nav-links li a:hover {
-	color: var(--secondaryColor);
+.nav-links .router-link:hover {
+	background-image: linear-gradient(to top, #50cc7f 0%, #f5d100 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
 }
+
+a.active.router-link-exact-active.router-link {
+	background-image: linear-gradient(
+		-225deg,
+		#d4ffec 0%,
+		#57f2cc 48%,
+		#4596fb 100%
+	);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
 .navigation.sticky .nav-links li a {
 	color: #fff;
 	transition: all 0.4s ease;

@@ -12,6 +12,7 @@ const ImageminWebpackPlugin = require("imagemin-webpack-plugin").default;
 
 export default defineConfig({
 	plugins: [vue(), vueJsx()],
+	server: {port: 3000},
 	// resolve: {
 	// alias: {
 	// "@": fileURLToPath(new URL("./src", import.meta.url)),

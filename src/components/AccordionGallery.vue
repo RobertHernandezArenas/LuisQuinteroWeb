@@ -36,9 +36,7 @@ onMounted(() => {
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
-	height: calc(100vh - 112px);
-	/* margin: 6.6rem 0 .5rem 0; */
-	margin: .6rem 0 .5rem 0;
+	height: calc(100vh - 100px);
 	gap: 0.5rem;
 	overflow: scroll;
 	-ms-scroll-snap-type: x mandatory;
@@ -93,16 +91,16 @@ onMounted(() => {
 	cursor: pointer;
 }
 
-h3.accordion__title {
+h2.accordion__title {
 	font-weight: 700;
 	font-size: 1.3rem;
-	margin: 0 1rem 0.75rem 1rem;
+	margin: 0 1rem;
 }
 
 .accordion__description {
 	line-height: 1.3rem;
 	font-size: 14px;
-	margin: 0 1rem 0.75rem 1rem;
+	margin: 0 1rem;
 }
 
 @media only screen and (min-width: 1200px) {
@@ -266,10 +264,10 @@ h3.accordion__title {
 		color: #fff;
 	}
 
-	h3.accordion__title {
-		font-size: 2.625rem;
+	h2.accordion__title {
+		font-size: 2.5rem;
 		text-align: left;
-		margin: 0 1rem 1rem 1.5rem;
+		margin: 0 1rem;
 	}
 
 	.accordion__description {
@@ -277,7 +275,7 @@ h3.accordion__title {
 		max-width: -webkit-max-content;
 		max-width: -moz-max-content;
 		max-width: max-content;
-		margin: 0 1.5rem 1.5rem 1.5rem;
+		margin: 0 1rem;
 		line-height: 1.5rem;
 		text-align: left;
 	}

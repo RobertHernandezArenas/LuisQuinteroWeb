@@ -11,10 +11,12 @@
 				<img
 					:src="matchData.team1.image"
 					:alt="`Escudo ${matchData.team1.name}`"
+					width="50"
+					height="50"
 					class="matchcard__team-shield"
 				/>
 				<p class="matchcard__team-name">
-					{{ removeLetters(matchData.team1.name) }}
+					{{ matchData.team1.name }}
 				</p>
 			</div>
 			<div class="vs"><span>VS</span></div>
@@ -22,10 +24,12 @@
 				<img
 					:src="matchData.team2.image"
 					:alt="`Escudo ${matchData.team2.name}`"
+					width="59"
+					height="64"
 					class="matchcard__team-shield"
 				/>
 				<p class="matchcard__team-name">
-					{{ removeLetters(matchData.team2.name) }}
+					{{ matchData.team2.name }}
 				</p>
 			</div>
 		</article>
@@ -33,17 +37,10 @@
 </template>
 
 <script setup>
-import { onMounted, ref } from "vue";
+import { onMounted, ref, watchEffect } from "vue";
 import SEASONMATCHES from "../assets/data/matches.json";
 
 const matches = ref([]);
-
-const removeLetters = str => {
-	if (window.screen.width <= 1024) {
-		return (str = str.replace(" Juvenil A", ""));
-	}
-	return str;
-};
 
 onMounted(() => {
 	SEASONMATCHES.matches.map(match => {
@@ -68,6 +65,7 @@ onMounted(() => {
 	display: flex;
 	justify-content: center;
 	width: 100%;
+	max-width: 720px;
 }
 
 .matchcard__container {
@@ -80,7 +78,7 @@ onMounted(() => {
 }
 
 .matchcard__team-shield {
-	max-width: 50px;
+	/* max-width: 50px; */
 }
 
 .matchcard__team-name {
@@ -113,7 +111,7 @@ onMounted(() => {
 		width: 768px;
 	}
 	.matchcard__team-shield {
-		max-width: 70px;
+		/* max-width: 60px; */
 	}
 }
 </style>

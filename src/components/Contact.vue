@@ -7,9 +7,7 @@
 			:isShow="isVisible"
 		/>
 
-		<div class="image-section">
-			<img :src="section.image" alt="" class="" />
-		</div>
+		<div class="image-section"></div>
 
 		<form @submit.prevent="sendEmail(message)" id="contacto" class="contact">
 			<h1>{{ section.name }}</h1>
@@ -96,7 +94,7 @@ const section = ref({
 const sendEmail = async message => {
 	try {
 		isVisible.value = true;
-		await axios.post(`users/message`, message);
+		await axios.post("users/message", message);
 
 		message.name = "";
 		message.email = "";
@@ -105,7 +103,6 @@ const sendEmail = async message => {
 
 		isVisible.value = false;
 	} catch (error) {
-		console.log(error.message);
 		isVisible.value = false;
 	}
 };
@@ -164,7 +161,7 @@ onMounted(async () => {
 }
 
 .contact .contact__form-input {
-	font-family: "Rajdhani", "Proxima Nova Bl", "Segoe UI", Tahoma, Verdana,
+	font-family: "Poppins", "Proxima Nova Bl", "Segoe UI", Tahoma, Verdana,
 		sans-serif;
 	font-size: 1rem;
 	border: 2px solid black;
@@ -190,17 +187,16 @@ onMounted(async () => {
 	padding: 0.75rem 2rem;
 	border-radius: 0.15rem;
 	font-weight: 600;
+	font-size: 16px;
 	width: 85vw;
 }
 
 @media only screen and (min-width: 768px) {
-
-	
 	.image-section {
 		width: 100vw;
 		height: 400px;
 	}
-	
+
 	.contact__form .contact__form-button {
 		padding: 1rem 2rem;
 	}

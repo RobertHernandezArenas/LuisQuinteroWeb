@@ -8,13 +8,11 @@
 
 <style scoped>
 .footer {
-  width: 100%;
+  background: black;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 60px;
-  background: black;
-  z-index: 15;
+  height: 80px;
 }
 
 .footer__mark {

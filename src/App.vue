@@ -1,147 +1,28 @@
 <template>
-	<Contact />
-	<!-- <button @click.prevent="add">Hola</button> -->
-	<!-- <GalleryIA :images="cards" /> -->
-	<!-- <MenuBar /> -->
-	<!-- <Marquesina />
-	<AccordionCards />
-	<AccordionGallery /> 
-	<Countdown :date="dateDay" @onFinish="finish()" />
-	<MatchDays />
-	<Biography />-->
-	<!-- <Slider /> 
-	<Contact />-->
-	<!--<Stats />-->
+	<MenuBar />
 
-	<!--<GridMansory /> 
-	 <Newsletter />
-<Mansory /> 
-	<ButtonUp />
-	<Cookies />
-	<Updateo /> 
-	<FooterX />-->
-	<!-- <CardVideos :url="url" :title="title" :description="description" /> -->
+	<RouterView /><!-- <Transition name="slide-fade"> </Transition> -->
+	<FooterX />
 </template>
 
 <script setup>
-import {
-	onMounted,
-	ref,
-	onBeforeMount,
-	onUpdated,
-	computed,
-	reactive,
-} from "vue";
-import SEASONMATCHES from "./assets/data/matches.json";
-import AccordionGallery from "./components/AccordionGallery.vue";
-import LoadingIcon from "./components/icons/LoadingIcon.vue";
-import AccordionCards from "./components/AccordionCards.vue";
-import ButtonUp from "./components/ButtonUp.vue";
-import Contact from "./components/Contact.vue";
-import Countdown from "./components/Countdown.vue";
-import Demo from "./components/Demo.vue";
-import GridMansory from "./components/GridMansory.vue";
-import MatchDays from "./components/MatchDays.vue";
-import Marquesina from "./components/Marquesina.vue";
+import { RouterView } from "vue-router";
 import MenuBar from "./components/MenuBar.vue";
-import Slider from "./components/Slider.vue";
-import Biography from "./components/Biography.vue";
-import Gallery from "./components/Gallery.vue";
-import GalleryIA from "./components/GalleryIA.vue";
-import Cookies from "./components/Cookies.vue";
-import Mansory from "./components/Mansory.vue";
 import FooterX from "./components/FooterX.vue";
-import Newsletter from "./components/Newsletter.vue";
-import Stats from "./components/Stats.vue";
-import Updateo from "./components/Updateo.vue";
-import data from "./assets/data/accordion-cards.json";
+import { onBeforeMount } from "vue";
 
-const cards = ref([]);
 
-const dates = ref([
-	//new Date("2022-12-12T20:08:00").getTime(),
-	// new Date("2022-12-04T14:35:00").getTime(),
-	// new Date("2022-12-04T14:30:00").getTime(),
-	// new Date("2022-12-04T14:35:00").getTime(),
-	// new Date("2022-12-04T14:30:00").getTime(),
-]);
-
-let end = ref();
-let dateDay = computed(() => {
-	return (end = dates.value[0]);
-});
-const finish = () => {};
-onBeforeMount(() => {
-	SEASONMATCHES.matches.map((match, index) => {
-		if (!(new Date(match.date).getTime() <= new Date().getTime())) {
-			dates.value.push(new Date(match.date).getTime());
-			end.value = dates.value[0];
-		}
-	});
-
-	// async function getIpClient() {
-	// 	try {
-	// 		const response = await fetch("https://api.ipify.org?format=json");
-	// 		let hola = await response.json();
-	// 		console.log(hola)
-	// 	} catch (error) {
-	// 		console.error(error);
-	// 	}
-	// }
-
-	// getIpClient();
-
-	/* --------------- SCROLL FX ---------------- */
-	const fxs = document.querySelectorAll(".fx");
-	window.addEventListener("scroll", checkfxs);
-	checkfxs();
-
-	function checkfxs() {
-		const triggerBottom = (window.innerHeight / 5) * 4;
-
-		fxs.forEach(box => {
-			const boxTop = box.getBoundingClientRect().top;
-			console.log(boxTop);
-
-			if (boxTop < triggerBottom) {
-				box.classList.add("show");
-			} else {
-				box.classList.remove("show");
-			}
-		});
-	}
-	/* ------------------------------------------ */
-});
-onMounted(() => {
-	data.accordion.map(element => cards.value.push(element));
-});
-
-onUpdated(() => {});
 </script>
 
 <style>
 @import "./assets/styles/reset.css";
-@import url("https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 @import "./assets/fonts/ProximaNova/index.css";
+@import "../public/fonts/Sigana/index.css";
 
 :root {
 	--mainColor: black;
 	--secondaryColor: #e0ae00;
-}
-html {
-	font-family: "Rajdhani", "Proxima Nova Bl", "Segoe UI", Tahoma, Verdana,
-		sans-serif;
-}
-textarea,
-body {
-	-ms-overflow-style: none; /* IE and Edge */
-	scrollbar-width: none; /* Firefox */
-	font-family: "Rajdhani", "Proxima Nova Bl", "Segoe UI", Tahoma, Verdana,
-		sans-serif;
-}
-
-body::-webkit-scrollbar {
-	display: none;
 }
 
 * {
@@ -152,14 +33,40 @@ body::-webkit-scrollbar {
 	color: var(--mainColor);
 }
 
+html,
+textarea,
+body {
+	font-family: "Poppins", "Proxima Nova Bl", "Segoe UI", Tahoma, Verdana,
+		sans-serif;
+}
+
+body {
+	height: 100vh;
+}
+
+img {
+	/* max-width: 100%; */
+	display: block;
+}
+
 #app {
-	display: flex;
-	justify-content: center;
-	flex-direction: column;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	color: #ffffff;
-	background-color: var(--tertiaryColor);
 	overflow: hidden;
+}
+
+.slide-fade-enter-active {
+	transition: all 0.8s ease-in-out;
+}
+
+.slide-fade-leave-active {
+	transition: all 1.3s cubic-bezier(1, 0.5, 0.8, 1);
+}
+
+.slide-fade-enter-from,
+.slide-fade-leave-to {
+	transform: translateY(-20px);
+	opacity: 0;
 }
 </style>

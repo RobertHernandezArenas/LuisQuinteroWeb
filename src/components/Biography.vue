@@ -1,17 +1,13 @@
 <template>
 	<section id="biografia" class="biography">
-		<BiographySecton />
 		<div class="biography__background"></div>
 	</section>
 </template>
 
 <script setup>
-import BiographySecton from "./BiographySection.vue";
 </script>
 
 <style scoped>
-/*--- ANIMATION FX ---*/
-/* @import "../../public/styles/animations/glitch.css"; */
 @import "../../public/styles/animations/movement-bg.css";
 
 p {
@@ -25,7 +21,6 @@ p {
 	overflow: hidden;
 	height: auto;
 	z-index: 2;
-	padding: 4rem 0;
 }
 
 /* .biography__image {
@@ -41,7 +36,6 @@ p {
 	animation: glitchFx 8s infinite steps(1) alternate-reverse;
 } */
 .biography .biography__background {
-	/**/
 	background: url("/images/stadiums/STDM07.jpg");
 	background-position: center;
 	background-repeat: no-repeat;
@@ -70,7 +64,7 @@ p {
 
 @media only screen and (min-width: 1024px) {
 	.biography {
-		height: 100vh;
+		height: calc(100vh - 100px);
 	}
 }
 </style>

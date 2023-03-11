@@ -1,56 +1,11 @@
 <template>
-	<svg
-		version="1.1"
-		id="buttonMenu"
-		xmlns="http://www.w3.org/2000/svg"
-		xmlns:xlink="http://www.w3.org/1999/xlink"
-		x="0px"
-		y="0px"
-		:width="width"
-		:height="height"
-		viewBox="0 0 92.833 92.833"
-		style="enable-background: new 0 0 92.833 92.833"
-		xml:space="preserve"
-	>
-		<g>
-			<g>
-				<path
-					:fill="color"
-					d="M89.834,1.75H3c-1.654,0-3,1.346-3,3v13.334c0,1.654,1.346,3,3,3h86.833c1.653,0,3-1.346,3-3V4.75
-			C92.834,3.096,91.488,1.75,89.834,1.75z"
-				/>
-				<path
-					:fill="color"
-					d="M89.834,36.75H3c-1.654,0-3,1.346-3,3v13.334c0,1.654,1.346,3,3,3h86.833c1.653,0,3-1.346,3-3V39.75
-			C92.834,38.096,91.488,36.75,89.834,36.75z"
-				/>
-				<path
-					:fill="color"
-					d="M89.834,71.75H3c-1.654,0-3,1.346-3,3v13.334c0,1.654,1.346,3,3,3h86.833c1.653,0,3-1.346,3-3V74.75
-			C92.834,73.095,91.488,71.75,89.834,71.75z"
-				/>
-			</g>
-		</g>
-		<g></g>
-		<g></g>
-		<g></g>
-		<g></g>
-		<g></g>
-		<g></g>
-		<g></g>
-		<g></g>
-		<g></g>
-		<g></g>
-		<g></g>
-		<g></g>
-		<g></g>
-		<g></g>
-		<g></g>
-	</svg>
+	<svg id="buttonMenu" :width="width" :height="height" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M6 8.1H19V6.9H6V8.1ZM6 18.1H19V16.9H6V18.1ZM6 13.1H19V11.9H6V13.1Z" :fill="fill"/>
+</svg>
 </template>
 
 <script setup>
-defineProps(["color", "width", "height"]);
+defineProps(["fill", "width", "height"]);
 </script>
 
 <style scoped>

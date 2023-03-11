@@ -62,7 +62,13 @@
 	</div>
 </template>
 
-<script setup></script>
+<script setup>
+import { onMounted } from 'vue';
+
+onMounted(() => {
+	
+})
+</script>
 
 <style scoped>
 @import "../../public/styles/animations/glitch.css";
@@ -78,15 +84,10 @@ b {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
-	z-index: 10;
-	height: fit-content;
+	z-index: -100;
+	height: auto;
 }
 
-.biography-content {
-}
-
-.content-container {
-}
 
 .content-image {
 	background-size: cover;
@@ -94,7 +95,6 @@ b {
 	background-repeat: no-repeat;
 	width: 200px;
 	height: 280px;
-
 	animation: glitchFx 8s infinite steps(1) alternate-reverse;
 }
 
@@ -107,15 +107,10 @@ b {
 	color: black;
 }
 
-.content-article__header {
-}
-
 .content-article__header-title {
-	margin: 1rem;
-	font-size: 2.625rem;
+	text-align: center;
+	font-size: 2.5rem;
 	font-weight: 800;
-	padding-left: 1rem;
-	border-left: var(--mainColor) 8px solid;
 }
 
 .content-article__header-data {
@@ -137,11 +132,12 @@ b {
 @media only screen and (min-width: 1200px) {
 	.biography-content {
 		gap: 4rem;
+		height: calc(100vh - 100px);
 	}
 
 	.content-image {
-		width: 500px;
-		height: 580px;
+		width: 680px;
+		height: 100vh;
 	}
 
 	.content-container {
