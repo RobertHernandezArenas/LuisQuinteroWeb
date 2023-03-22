@@ -11,7 +11,7 @@
 							width="40"
 							height="40"
 						/>
-						<span class="title">LUIS QUINTERO</span>
+						<h1 class="title">LUIS QUINTERO</h1>
 					</router-link>
 				</div>
 				<ul class="nav-links">
@@ -267,7 +267,11 @@ onMounted(() => {
 }
 
 a.active.router-link-exact-active.router-link {
-	background: linear-gradient(109.6deg, rgb(255, 219, 47) 11.2%, rgb(244, 253, 0) 100.2%);
+	background: linear-gradient(
+		109.6deg,
+		rgb(255, 219, 47) 11.2%,
+		rgb(244, 253, 0) 100.2%
+	);
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 	font-weight: bolder;
