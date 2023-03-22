@@ -161,8 +161,6 @@ onMounted(async () => {
 }
 
 .contact .contact__form-input {
-	font-family: "Poppins", "Proxima Nova Bl", "Segoe UI", Tahoma, Verdana,
-		sans-serif;
 	font-size: 1rem;
 	border: 2px solid black;
 	border-radius: 0.15rem;

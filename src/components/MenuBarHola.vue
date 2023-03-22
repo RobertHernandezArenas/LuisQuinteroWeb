@@ -211,9 +211,6 @@ const menuFX = e => {
 	font-weight: bold;
 	color: white;
 	font-size: 1rem;
-	font-family: "Poppins", "Proxima Nova Rg", "Segoe UI", Tahoma, Geneva,
-		Verdana, sans-serif;
-	font-display: swap;
 }
 .navigation .logo a {
 	font-weight: 500;

@@ -130,7 +130,6 @@ onMounted(() => {
 	color: var(--secondaryColor);
 	font-style: italic;
 	font-weight: 700;
-	font-display: swap;
 }
 
 .countdown__match p.countdown__next-match span {

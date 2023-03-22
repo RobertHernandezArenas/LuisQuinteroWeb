@@ -64,7 +64,6 @@ onMounted(() => {
 	line-height: 32px;
 	text-align: center;
 	font-weight: 500;
-	font-family: "Futura";
 }
 
 .nike__content {
@@ -72,7 +71,6 @@ onMounted(() => {
 	max-width: 100%;
 	font-size: 14px;
 	line-height: 19px;
-	font-family: "Helvetica";
 }
 
 @media only screen and (min-width: 768px) {

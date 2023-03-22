@@ -1,0 +1,36 @@
+@import "../fonts/Poppins/index.css";
+@import "./glitch-fx.css";
+@import "./movement-bg.css";
+
+:root {
+	--mainColor: black;
+	--secondaryColor: #e0ae00;
+}
+
+/* Reseteamos los margin y paddings de todas las etiquetas */
+* {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	box-sizing: border-box;
+	scroll-behavior: smooth;
+	color: var(--mainColor);
+	font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+html {
+	height: 100%;
+}
+
+html,
+textarea,
+body {
+	width: 100vw;
+}
+
+img {
+	max-width: 100%;
+	display: block;
+}

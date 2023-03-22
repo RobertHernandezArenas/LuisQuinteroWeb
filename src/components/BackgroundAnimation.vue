@@ -8,8 +8,6 @@
 </script>
 
 <style scoped>
-@import "../../public/styles/animations/movement-bg.css";
-
 .background-animation {
 	position: relative;
 	display: flex;

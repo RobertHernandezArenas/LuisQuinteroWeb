@@ -1,9 +1,4 @@
-import {
-	createRouter,
-	createWebHistory,
-	createWebHashHistory,
-} from "vue-router";
-
+import { createRouter, createWebHashHistory } from "vue-router";
 
 const router = createRouter({
 	history: createWebHashHistory(import.meta.env.BASE_URL),
@@ -18,7 +13,7 @@ const router = createRouter({
 			name: "biography",
 			component: () => import("../views/BiographyView.vue"),
 		},
-		
+
 		{
 			path: "/galeria",
 			name: "gallery",

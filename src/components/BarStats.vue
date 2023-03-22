@@ -63,10 +63,6 @@ onMounted(() => {
 	height: 30px;
 	margin: 0 1rem;
 	background: linear-gradient(225deg, #fff700 0%, #008071 100%);
-
-	font-weight: bold;
-	font-family: "Proxima Nova", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-	font-display: swap;
 	font-size: 0.9rem;
 	padding-left: 0.5rem;
 }

@@ -1,8 +1,8 @@
 <template>
 	<div class="home">
 		<Hero />
-		<Countdown :date="dates[0]" />
-		<!-- <MatchDays /> -->
+		<!-- <Countdown :date="dates[0]" />
+		<MatchDays /> -->
 	</div>
 </template>
 
@@ -82,28 +82,18 @@ onBeforeMount(() => {
 </script>
 
 <style scoped>
-*::-webkit-scrollbar {
-	display: none;
-}
 .home {
-	background: black;
-	background-attachment: local;
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-position: center;
+	background: black no-repeat cover center;
 }
-@media only screen and (min-width: 390px) {
-	.home {
-		height: calc(100vh - 160px);
-		overflow-y: scroll;
-		overflow-x: hidden;
-	}
-}
+
 @media only screen and (min-width: 1024px) {
 	.home {
-		height: calc(100vh - 160px);
-		background-position: center;
-		overflow: auto;
+		filter: grayscale(50%);
+		transition: all 0.35s ease-in;
+	}
+	.home:hover {
+		filter: grayscale(0%);
+		transition: all 0.35s ease-in-out;
 	}
 }
 </style>

@@ -163,7 +163,6 @@
 <script setup></script>
 
 <style scoped>
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,600);
 
 #gallery {
 	width: 80vw;

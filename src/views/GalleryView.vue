@@ -10,6 +10,9 @@
 
 <style scoped>
 .gallery {
-  height: 100vh;
+  height: calc(100vh - 160px);
+}
+.gallery h1 {
+  font-size: 3.5rem;
 }
 </style>

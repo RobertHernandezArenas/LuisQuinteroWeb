@@ -187,6 +187,7 @@ onMounted(async () => {
 
 <style scoped>
 .contact {
+	background: white;
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
@@ -226,8 +227,6 @@ onMounted(async () => {
 }
 
 .contact__form .contact__form-input {
-	font-family: "Poppins", "Proxima Nova Bl", "Segoe UI", Tahoma,
-		Verdana, sans-serif;
 	font-size: 14px;
 	border: 2px solid black;
 	border-radius: 0.15rem;

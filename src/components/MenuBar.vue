@@ -1,11 +1,17 @@
 <template>
-	<header class="header">
-		<nav class="navigation">
+	<nav class="nav">
+		<div class="navigation">
 			<div class="nav-content">
 				<div class="logo">
 					<router-link to="/" class="logo__router-link">
-						<img :src="logo" alt="Logo" class="logo__image" width="40" height="40" />
-						<h1 class="title">LUIS QUINTERO</h1>
+						<img
+							:src="logo"
+							alt="Logo"
+							class="logo__image"
+							width="40"
+							height="40"
+						/>
+						<span class="title">LUIS QUINTERO</span>
 					</router-link>
 				</div>
 				<ul class="nav-links">
@@ -47,7 +53,7 @@
 					:fill="fill"
 				/>
 			</div>
-		</nav>
+		</div>
 
 		<div class="nav-mobile">
 			<ButtonClose
@@ -86,7 +92,7 @@
 				>Contacto</router-link
 			>
 		</div>
-	</header>
+	</nav>
 </template>
 
 <script setup>
@@ -131,9 +137,8 @@ onMounted(() => {
 </script>
 
 <style scoped>
-.header {
+.nav {
 	height: 80px;
-
 }
 .navigation .logo .logo__router-link h1.title.black {
 	color: black;
@@ -227,8 +232,6 @@ onMounted(() => {
 .navigation .logo .logo__router-link h1.title {
 	color: white;
 	font-size: 1rem;
-	font-family: "Poppins", "Proxima Nova Rg", "Segoe UI", Tahoma, Geneva,
-		Verdana, sans-serif;
 }
 .navigation .logo a {
 	font-weight: 500;
@@ -264,14 +267,10 @@ onMounted(() => {
 }
 
 a.active.router-link-exact-active.router-link {
-	background-image: linear-gradient(
-		-225deg,
-		#d4ffec 0%,
-		#57f2cc 48%,
-		#4596fb 100%
-	);
+	background: linear-gradient(109.6deg, rgb(255, 219, 47) 11.2%, rgb(244, 253, 0) 100.2%);
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
+	font-weight: bolder;
 }
 
 .navigation.sticky .nav-links li a {

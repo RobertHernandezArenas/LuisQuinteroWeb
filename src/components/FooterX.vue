@@ -1,22 +1,20 @@
 <template>
-	<footer class="footer">
-		<span class="footer__mark">Luis Quintero&#174; 2023</span>
-	</footer>
+	<div class="copyright">
+		<span class="copyright__mark">Luis Quintero&#174;2023</span>
+	</div>
 </template>
 
 <script setup></script>
 
 <style scoped>
-.footer {
-  background: black;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 80px;
+.copyright {
+	background: black;
+	text-align: center;
+	height: 80px;
 }
 
-.footer__mark {
-  color: white;
-  font-size: 13px;
+.copyright__mark {
+	color: white;
+	font-size: 13px;
 }
 </style>

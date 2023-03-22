@@ -279,7 +279,6 @@ render()
   z-index: 1;
   text-decoration: none;
   background: #333;
-  font-family: sans-serif;
   color: #fff;
   text-transform: uppercase;
   font-size: 12px;

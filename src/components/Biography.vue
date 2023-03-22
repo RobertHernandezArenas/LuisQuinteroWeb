@@ -4,11 +4,9 @@
 	</section>
 </template>
 
-<script setup>
-</script>
+<script setup></script>
 
 <style scoped>
-@import "../../public/styles/animations/movement-bg.css";
 
 p {
 	font-size: 1rem;

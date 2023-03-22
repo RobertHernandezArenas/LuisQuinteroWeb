@@ -1,85 +1,38 @@
-import { fileURLToPath, URL } from "node:url";
-
 import { defineConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
-import vueJsx from "@vitejs/plugin-vue-jsx";
 
-const TerserPlugin = require("terser-webpack-plugin");
-const cssnano = require("cssnano");
-const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
-const ImageminWebpWebpackPlugin = require("imagemin-webp-webpack-plugin");
-const ImageminWebpackPlugin = require("imagemin-webpack-plugin").default;
-
+// https://vitejs.dev/config/
 export default defineConfig({
-	plugins: [vue(), vueJsx()],
-	server: {port: 3000},
-	// resolve: {
-	// alias: {
-	// "@": fileURLToPath(new URL("./src", import.meta.url)),
-	// 	},
-	// },
-
-	base: "/",
-	assetsDir: "static",
-	outDir: "dist",
-	configureWebpack: {
-		optimization: {
-			minimizer: [
-				new TerserPlugin({
-					terserOptions: {
-						output: {
-							comments: false,
-						},
-					},
-				}),
-				new CssMinimizerPlugin({
-					minimizerOptions: {
-						preset: [
-							"default",
-							{
-								discardComments: {
-									removeAll: true,
-								},
-							},
-						],
-					},
-				}),
-			],
-			splitChunks: {
-				chunks: "all",
-			},
-		},
-		resolve: {
-			alias: {
-				vue: "vue/dist/vue.esm.js",
-			},
-		},
+	plugins: [vue()],
+	server: {
+		port: 3001,
+		compression: true,
 	},
-	chainWebpack: config => {
-		config.module
-			.rule("images")
-			.use("url-loader")
-			.loader("url-loader")
-			.tap(options => {
-				options.limit = 8192;
-				return options;
-			});
-		config.plugin("imagemin-webp").use(ImageminWebpWebpackPlugin, [
-			{
-				config: [
-					{
-						test: /\.(jpe?g|png)/,
-						options: {
-							quality: 75,
-						},
-					},
-				],
+	vueCompilerOptions: {
+		productionMode: true,
+	},
+	build: {
+		cssCodeSplit: false,
+		rollupOptions: {
+			input: "index.html",
+			output: {
+				// entryFileNames: `assets/[name].js`,
+				// chunkFileNames: `assets/[name].js`,
+				// assetFileNames: `assets/[name].[ext]`,
+				manualChunks: { vue: ["vue"] },
 			},
-		]);
-		config.plugin("imagemin").use(ImageminWebpackPlugin, [
-			{
-				test: /\.(jpe?g|png|gif|svg)/,
-			},
-		]);
+		},
+		// habilitar la generación de service workers
+		sourcemap: true,
+		assetsInlineLimit: 4096,
+		chunkSizeWarningLimit: 1500,
+		manifest: true,
+		outDir: "dist",
+	},
+	// habilitar el Service Worker
+	serviceWorker: {
+		register: true,
+		scope: "/",
+		// configuración adicional del Service Worker, si es necesario
 	},
 });

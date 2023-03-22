@@ -63,16 +63,12 @@
 </template>
 
 <script setup>
-import { onMounted } from 'vue';
+import { onMounted } from "vue";
 
-onMounted(() => {
-	
-})
+onMounted(() => {});
 </script>
 
 <style scoped>
-@import "../../public/styles/animations/glitch.css";
-
 p,
 span,
 b {
@@ -87,7 +83,6 @@ b {
 	z-index: -100;
 	height: auto;
 }
-
 
 .content-image {
 	background-size: cover;
@@ -120,9 +115,6 @@ b {
 .content-article__nacionality-flags {
 	width: 26px;
 	margin: 0 0.25rem;
-}
-
-.content-article__body {
 }
 
 .content-article__body-biography {
