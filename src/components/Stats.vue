@@ -34,11 +34,11 @@
 </template>
 
 <script setup>
-import BarStats from "./BarStats.vue";
+import BarStats from './BarStats.vue';
 
-const barIconGoalNet = "/images/goal-net.svg";
-const barIconGoal = "/images/ball.svg";
-const barIconFootboots = "/images/football-boots.png";
+const barIconGoalNet = '/images/goal-net.svg';
+const barIconGoal = '/images/ball.svg';
+const barIconFootboots = '/images/football-boots.png';
 const playedMatches = 14; // +1 NO CONVOCADO
 const goals = 10;
 const asistGoals = 6;
@@ -72,7 +72,7 @@ const asistGoals = 6;
 	font-size: 2.625rem;
 	font-weight: 800;
 	padding-left: 1rem;
-	border-left: var(--mainColor) 8px solid;
+	border-left: var(--neutral-0) 8px solid;
 }
 
 .stats__subtitle {

@@ -8,7 +8,7 @@
 
 <style scoped>
 .footer {
-	background: black;
+	background: var(--neutral-0);
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -16,7 +16,7 @@
 }
 
 .footer__mark {
-	color: white;
+	color: var(--lightColor);
 	font-size: 13px;
 }
 </style>

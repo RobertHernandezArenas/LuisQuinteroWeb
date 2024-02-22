@@ -1,28 +1,30 @@
-import { createRouter, createWebHashHistory } from "vue-router";
+import { createRouter, createWebHistory } from 'vue-router';
+import HomeView from '../pages/HomeView.vue';
+import App from '../App.vue';
 
 const router = createRouter({
-	history: createWebHashHistory(import.meta.env.BASE_URL),
+	history: createWebHistory(import.meta.env.BASE_URL),
 	routes: [
 		{
-			path: "/",
-			name: "home",
-			component: () => import("../views/HomeView.vue"),
+			path: '/',
+			name: 'home',
+			component: HomeView,
 		},
 		{
-			path: "/biografia",
-			name: "biography",
-			component: () => import("../views/BiographyView.vue"),
+			path: '/biografia',
+			name: 'biography',
+			component: () => import('../pages/BiographyView.vue'),
 		},
 
 		{
-			path: "/galeria",
-			name: "gallery",
-			component: () => import("../views/GalleryView.vue"),
+			path: '/galeria',
+			name: 'gallery',
+			component: () => import('../pages/GalleryView.vue'),
 		},
 		{
-			path: "/contacto",
-			name: "contact",
-			component: () => import("../views/ContactView.vue"),
+			path: '/contacto',
+			name: 'contact',
+			component: () => import('../pages/ContactView.vue'),
 		},
 	],
 });

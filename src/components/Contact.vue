@@ -73,33 +73,33 @@
 </template>
 
 <script setup>
-import axios from "axios";
-import { ref, onMounted } from "vue";
-import LoadingIcon from "../components/icons/LoadingIcon.vue";
+import axios from 'axios';
+import { ref, onMounted } from 'vue';
+import LoadingIcon from '../components/icons/LoadingIcon.vue';
 
 const isVisible = ref(false);
 
 const message = ref({
-	name: "",
-	email: "",
-	subject: "",
-	message: "",
+	name: '',
+	email: '',
+	subject: '',
+	message: '',
 });
 
 const section = ref({
-	name: "CONTACTO",
-	image: "/images/luis-quintero-email.jpg",
-	btn_name: "ENVIAR",
+	name: 'CONTACTO',
+	image: '/images/luis-quintero-email.jpg',
+	btn_name: 'ENVIAR',
 });
 const sendEmail = async message => {
 	try {
 		isVisible.value = true;
-		await axios.post("users/message", message);
+		await axios.post('users/message', message);
 
-		message.name = "";
-		message.email = "";
-		message.subject = "";
-		message.message = "";
+		message.name = '';
+		message.email = '';
+		message.subject = '';
+		message.message = '';
 
 		isVisible.value = false;
 	} catch (error) {
@@ -108,18 +108,16 @@ const sendEmail = async message => {
 };
 
 onMounted(async () => {
-	const input = document.querySelector("input");
+	const input = document.querySelector('input');
 
-	input.addEventListener("invalid", function (event) {
+	input.addEventListener('invalid', function (event) {
 		if (event.target.validity.valueMissing) {
-			event.target.setCustomValidity(
-				"Campo requerido: no puede estar vacio",
-			);
+			event.target.setCustomValidity('Campo requerido: no puede estar vacio');
 		}
 	});
 
-	input.addEventListener("change", function (event) {
-		event.target.setCustomValidity("");
+	input.addEventListener('change', function (event) {
+		event.target.setCustomValidity('');
 	});
 });
 </script>
@@ -136,7 +134,7 @@ onMounted(async () => {
 	font-size: 3.5rem;
 }
 .image-section {
-	background-image: url("/images/luis-quintero-email.jpg");
+	background-image: url('/images/luis-quintero-email.jpg');
 	background-position: top;
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -162,7 +160,7 @@ onMounted(async () => {
 
 .contact .contact__form-input {
 	font-size: 1rem;
-	border: 2px solid black;
+	border: 2px solid var(--neutral-0);
 	border-radius: 0.15rem;
 	padding: 0.65rem 1rem;
 	margin: 0.5rem 0;
@@ -171,7 +169,7 @@ onMounted(async () => {
 
 .contact__form-txt-area {
 	font-size: 1rem;
-	border: 2px solid black;
+	border: 2px solid var(--neutral-0);
 	border-radius: 0.15rem;
 	padding: 0.65rem 1rem;
 	margin: 0.5rem 0;
@@ -180,8 +178,8 @@ onMounted(async () => {
 }
 
 .contact__form .contact__form-button {
-	color: white;
-	background: black;
+	color: var(--lightColor);
+	background: var(--neutral-0);
 	padding: 0.75rem 2rem;
 	border-radius: 0.15rem;
 	font-weight: 600;

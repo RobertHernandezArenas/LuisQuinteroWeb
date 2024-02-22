@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" type="text/css" href="super/super.css" />
+		<link rel="stylesheet" type="text/css" href="super/super-theme-v1.css" />
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<script
+			src="dist/scripts/superSlider.min.js"
+			type="text/javascript"
+			charset="utf-8"
+		></script>
+		<title>demo</title>
+		<style>
+			* {
+				font-family: -apple-system, BlinkMacSystemFont, 'Outfit', 'Poppins',
+					'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+				padding: 0;
+				margin: 0;
+			}
+			.carousel {
+				height: 250px;
+				position: relative;
+				width: 80%;
+			}
+			.carousel__box {
+				align-items: center;
+				display: flex;
+				display: inline-block;
+				height: 250px;
+				overflow: hidden;
+				padding-bottom: 10px;
+				text-align: center;
+				white-space: nowrap;
+				width: auto;
+			}
+
+			.carousel__box img {
+				background-size: cover;
+				background: orange;
+				cursor: pointer;
+				height: 200px;
+				margin: 5px 10px;
+				min-height: 147px;
+				min-width: 147px;
+				transition: 0.5s ease;
+				z-index: 2;
+			}
+
+			.carousel__box img:hover {
+				transform: scale(1, 4);
+				z-index: 5;
+			}
+
+			.carousel__btn-left,
+			.carousel__btn-right {
+				background: red;
+				color: white;
+				font-size: 205px;
+				font-weight: 900;
+				height: 100%;
+				line-height: 250px;
+				text-align: center;
+				top: 0;
+				width: 45px;
+				z-index: 3;
+			}
+			.carousel__btn-left {
+				position: absolute;
+				left: -50px;
+			}
+			.carousel__btn-right {
+				position: absolute;
+				right: -50px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="your-class-here" id="your-id-here">
+			<div>slide content</div>
+			<div>slide content</div>
+			<div>slide content</div>
+		</div>
+	</body>
+
+	<script>
+		$(document).ready(function () {
+			$('.your-class-here').super({
+				// Any custom settings go here
+			});
+		});
+	</script>
+</html>

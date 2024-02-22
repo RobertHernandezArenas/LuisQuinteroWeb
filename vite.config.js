@@ -1,12 +1,29 @@
-import { defineConfig } from "vite";
-import vue from "@vitejs/plugin-vue";
+import { defineConfig } from 'vite';
+import vue from '@vitejs/plugin-vue';
+import vueI18n from '@intlify/vite-plugin-vue-i18n';
+import { fileURLToPath, URL } from 'node:url';
+
 
 // https://vitejs.dev/config/
 export default defineConfig({
-	plugins: [vue()],
+	plugins: [
+		vue(),
+		vueI18n({
+			// if you want to use Vue I18n Legacy API, you need to set `compositionOnly: false`
+			compositionOnly: true,
+
+			// you need to set i18n resource including paths !
+			include: './src/locales/**',
+		}),
+	],
 	server: {
-		port: 3001,
+		port: 3000,
 		compression: true,
+	},
+	resolve: {
+		alias: {
+			'@': fileURLToPath(new URL('./src', import.meta.url)),
+		},
 	},
 	vueCompilerOptions: {
 		productionMode: true,
@@ -14,12 +31,12 @@ export default defineConfig({
 	build: {
 		cssCodeSplit: false,
 		rollupOptions: {
-			input: "index.html",
+			input: 'index.html',
 			output: {
-				// entryFileNames: `assets/[name].js`,
-				// chunkFileNames: `assets/[name].js`,
-				// assetFileNames: `assets/[name].[ext]`,
-				manualChunks: { vue: ["vue"] },
+				entryFileNames: `assets/[name].js`,
+				chunkFileNames: `assets/[name].js`,
+				assetFileNames: `assets/[name].[ext]`,
+				manualChunks: { vue: ['vue'] },
 			},
 		},
 		// habilitar la generación de service workers
@@ -27,12 +44,6 @@ export default defineConfig({
 		assetsInlineLimit: 4096,
 		chunkSizeWarningLimit: 1500,
 		manifest: true,
-		outDir: "dist",
-	},
-	// habilitar el Service Worker
-	serviceWorker: {
-		register: true,
-		scope: "/",
-		// configuración adicional del Service Worker, si es necesario
+		outDir: 'dist',
 	},
 });

@@ -37,8 +37,8 @@
 </template>
 
 <script setup>
-import { onMounted, ref, watchEffect } from "vue";
-import SEASONMATCHES from "../assets/data/matches.json";
+import { onMounted, ref, watchEffect } from 'vue';
+import SEASONMATCHES from '../assets/data/matches.json';
 
 const matches = ref([]);
 
@@ -56,7 +56,7 @@ onMounted(() => {
 	display: flex;
 	justify-content: center;
 	padding: 0rem 0 2rem 0;
-	background: black;
+	background: var(--neutral-0);
 	max-height: 300px;
 	width: 100vw;
 }
@@ -82,7 +82,7 @@ onMounted(() => {
 }
 
 .matchcard__team-name {
-	color: white;
+	color: var(--lightColor);
 }
 
 .vs {
@@ -94,7 +94,7 @@ onMounted(() => {
 .vs span {
 	font-size: 1.5rem;
 	font-weight: 600;
-	color: white;
+	color: var(--lightColor);
 }
 @media only screen and (min-width: 768px) {
 }

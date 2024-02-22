@@ -1,7 +1,7 @@
 <template>
 	<div class="wrapper-box">
 		<span class="stats__quantity"
-			>{{ barNum }} <b v-if="showTotalMatches">&nbsp;/&nbsp;30</b></span
+			>{{ barNum }} <b v-if="showTotalMatches">&nbsp;/&nbsp;450</b></span
 		>
 
 		<div class="barProgress">
@@ -16,19 +16,19 @@
 </template>
 
 <script setup>
-import { computed, onMounted } from "vue";
+import { computed, onMounted } from 'vue';
 defineProps([
-	"barName",
-	"barNum",
-	"showTotalMatches",
-	"average",
-	"showAverage",
+	'barName',
+	'barNum',
+	'showTotalMatches',
+	'average',
+	'showAverage',
 ]);
 
 onMounted(() => {
-	const stats = document.querySelector(".stats");
-	const progressBars = document.querySelectorAll(".barProgress");
-	window.addEventListener("scroll", callbackFX);
+	const stats = document.querySelector('.stats');
+	const progressBars = document.querySelectorAll('.barProgress');
+	window.addEventListener('scroll', callbackFX);
 	callbackFX();
 
 	function callbackFX() {
@@ -38,9 +38,9 @@ onMounted(() => {
 			const boxTop = stats.getBoundingClientRect().top;
 
 			if (boxTop < triggerBottom) {
-				progressBar.classList.add("increment");
+				progressBar.classList.add('increment');
 			} else {
-				progressBar.classList.remove("increment");
+				progressBar.classList.remove('increment');
 			}
 		});
 	}
@@ -88,7 +88,7 @@ onMounted(() => {
 	font-weight: 600;
 	font-size: 2rem;
 	padding-left: 2rem;
-	padding-bottom: .5rem;
+	padding-bottom: 0.5rem;
 	/* border: 5px solid #fff700; */
 }
 </style>

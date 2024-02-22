@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" type="text/css" href="super/super.css" />
+		<link rel="stylesheet" type="text/css" href="super/super-theme-v1.css" />
+		<link rel="stylesheet" type="text/css" href="super/super-theme-v1.css" />
+		<link rel="stylesheet" type="text/css" href="super/super-theme-v1.css" />
+		<title>demo</title>
+		<style>
+			* {
+				font-family: -apple-system, BlinkMacSystemFont, 'Outfit', 'Poppins',
+					'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+				padding: 0;
+				margin: 0;
+			}
+			.carousel {
+				height: 250px;
+				position: relative;
+				width: 80%;
+			}
+			.carousel__box {
+				align-items: center;
+				display: flex;
+				display: inline-block;
+				height: 250px;
+				overflow: hidden;
+				padding-bottom: 10px;
+				text-align: center;
+				white-space: nowrap;
+				width: auto;
+			}
+
+			.carousel__box img {
+				background-size: cover;
+				background: orange;
+				cursor: pointer;
+				height: 200px;
+				margin: 5px 10px;
+				min-height: 147px;
+				min-width: 147px;
+				transition: 0.5s ease;
+				z-index: 2;
+			}
+
+			.carousel__box img:hover {
+				transform: scale(1, 4);
+				z-index: 5;
+			}
+
+			.carousel__btn-left,
+			.carousel__btn-right {
+				background: red;
+				color: white;
+				font-size: 205px;
+				font-weight: 900;
+				height: 100%;
+				line-height: 250px;
+				text-align: center;
+				top: 0;
+				width: 45px;
+				z-index: 3;
+			}
+			.carousel__btn-left {
+				position: absolute;
+				left: -50px;
+			}
+			.carousel__btn-right {
+				position: absolute;
+				right: -50px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="carousel">
+			<div class="carousel__box"></div>
+		</div>
+		<a
+			class="carousel__btn-right carousel__button-nav"
+			onclick="sliderScrollRight()"
+			>></a
+		>
+		<a
+			class="carousel__btn-left carousel__button-nav"
+			onclick="sliderScrollLeft()"
+			><</a
+		>
+	</body>
+
+	<script>
+		const sliders = document.querySelector('.carousel__box');
+		let scrollPerClick;
+		let imagePadding = 20;
+		let scrollAmount = 0;
+
+		function sliderScrollLeft() {
+			sliders.scrollTo({
+				top: 0,
+				left: (scrollAmount -= scrollPerClick),
+				behavior: 'smooth',
+			});
+			if (scrollAmount < 0) {
+				scrollAmount = 0;
+			}
+		}
+
+		function sliderScrollRight() {
+			if (scrollAmount <= sliders.scrollWidth - sliders.clientWidth) {
+				sliders.scrollTo({
+					top: 0,
+					left: (scrollAmount += scrollPerClick),
+					behavior: 'smooth',
+				});
+			}
+		}
+		const images = [
+			{
+				categoryLeague: 'LaLiga Hypermotion',
+				date: '2023-08-05T19:00:00.00Z',
+				league: {
+					name: 'LaLiga Hypermotion',
+					image: '/images/leagues/laliga-hypermotion.svg',
+				},
+				match: 'Jornada 1',
+				season: '2023-2024',
+				teams: [
+					{
+						image: '/images/leagues/santander.png',
+						name: 'R.Santander',
+						result: '-',
+					},
+					{
+						image: '/images/leagues/amorebieta.png',
+						name: 'Amorebieta',
+						result: '-',
+					},
+				],
+			},
+			{
+				categoryLeague: 'LaLiga Hypermotion',
+				date: '2023-08-11T19:00:00.00Z',
+				league: {
+					name: 'LaLiga Hypermotion',
+					image: '/images/leagues/laliga-hypermotion.svg',
+				},
+				match: 'Jornada 1',
+				season: '2023-2024',
+				teams: [
+					{
+						image: '/images/leagues/amorebieta.png',
+						name: 'Amorebieta',
+						result: '1',
+					},
+					{
+						image: '/images/leagues/levante.png',
+						name: 'Levante UD',
+						result: '1',
+					},
+				],
+			},
+			{
+				categoryLeague: 'LaLiga Hypermotion',
+				date: '2023-08-20T22:00:00.00Z',
+				league: {
+					name: 'LaLiga Hypermotion',
+					image: '/images/leagues/laliga-hypermotion.svg',
+				},
+				match: 'Jornada 2',
+				season: '2023-2024',
+				teams: [
+					{
+						image: '/images/leagues/albacete.png',
+						name: 'Albacete',
+						result: '2',
+					},
+					{
+						image: '/images/leagues/amorebieta.png',
+						name: 'Amorebieta',
+						result: '2',
+					},
+				],
+			},
+			{
+				categoryLeague: 'LaLiga Hypermotion',
+				date: '2023-08-27T19:30:00.00Z',
+				league: {
+					name: 'LaLiga Hypermotion',
+					image: '/images/leagues/laliga-hypermotion.svg',
+				},
+				match: 'Jornada 3',
+				season: '2023-2024',
+				teams: [
+					{
+						image: '/images/leagues/amorebieta.png',
+						name: 'Amorebieta',
+						result: '3',
+					},
+					{
+						image: '/images/leagues/andorra.png',
+						name: 'Andorra',
+						result: '0',
+					},
+				],
+			},
+			{
+				categoryLeague: 'LaLiga Hypermotion',
+				date: '2023-09-03T19:00:00.00Z',
+				league: {
+					name: 'LaLiga Hypermotion',
+					image: '/images/leagues/laliga-hypermotion.svg',
+				},
+				match: 'Jornada 4',
+				season: '2023-2024',
+				teams: [
+					{
+						image: '/images/leagues/espanyol.png',
+						name: 'Espanyol',
+						result: '3',
+					},
+					{
+						image: '/images/leagues/amorebieta.png',
+						name: 'Amorebieta',
+						result: '2',
+					},
+				],
+			},
+			{
+				categoryLeague: 'LaLiga Hypermotion',
+				date: '2023-09-10T14:15:00.00Z',
+				league: {
+					name: 'LaLiga Hypermotion',
+					image: '/images/leagues/laliga-hypermotion.svg',
+				},
+				match: 'Jornada 5',
+				season: '2023-2024',
+				teams: [
+					{
+						image: '/images/leagues/santander.png',
+						name: 'Racing Santander',
+						result: '1',
+					},
+					{
+						image: '/images/leagues/amorebieta.png',
+						name: 'Amorebieta',
+						result: '0',
+					},
+				],
+			},
+			{
+				categoryLeague: 'LaLiga Hypermotion',
+				date: '2023-09-17T16:14:00.00Z',
+				league: {
+					name: 'LaLiga Hypermotion',
+					image: '/images/leagues/laliga-hypermotion.svg',
+				},
+				match: 'Jornada 6',
+				season: '2023-2024',
+				teams: [
+					{
+						image: '/images/leagues/amorebieta.png',
+						name: 'Amorebieta',
+						result: '2',
+					},
+					{
+						image: '/images/leagues/mirandes.png',
+						name: 'Mirandés',
+						result: '0',
+					},
+				],
+			},
+			{
+				categoryLeague: 'LaLiga Hypermotion',
+				date: '2023-09-24T14:00:00.00Z',
+				league: {
+					name: 'LaLiga Hypermotion',
+					image: '/images/leagues/laliga-hypermotion.svg',
+				},
+				match: 'Jornada 7',
+				season: '2023-2024',
+				teams: [
+					{
+						image: '/images/leagues/villarreal.png',
+						name: 'Villarreal B',
+						result: '3',
+					},
+					{
+						image: '/images/leagues/amorebieta.png',
+						name: 'Amorebieta',
+						result: '1',
+					},
+				],
+			},
+			{
+				categoryLeague: 'LaLiga Hypermotion',
+				date: '2023-09-24T14:00:00.00Z',
+				league: {
+					name: 'LaLiga Hypermotion',
+					image: '/images/leagues/laliga-hypermotion.svg',
+				},
+				match: 'Jornada 8',
+				season: '2023-2024',
+				teams: [
+					{
+						image: '/images/leagues/amorebieta.png',
+						name: 'Amorebieta',
+						result: '0',
+					},
+					{
+						image: '/images/leagues/cartagena.png',
+						name: 'FC Cartagena',
+						result: '0',
+					},
+				],
+			},
+			{
+				categoryLeague: 'LaLiga Hypermotion',
+				date: '2023-10-05T19:30:00.00Z',
+				league: {
+					name: 'LaLiga Hypermotion',
+					image: '/images/leagues/laliga-hypermotion.svg',
+				},
+				match: 'Jornada 9',
+				season: '2023-2024',
+				teams: [
+					{
+						image: '/images/leagues/ferrol.png',
+						name: 'R. Ferrol',
+						result: '1',
+					},
+					{
+						image: '/images/leagues/amorebieta.png',
+						name: 'Amorebieta',
+						result: '0',
+					},
+				],
+			},
+			{
+				categoryLeague: 'LaLiga Hypermotion',
+				date: '2023-10-08T13:00:00.00Z',
+				league: {
+					name: 'LaLiga Hypermotion',
+					image: '/images/leagues/laliga-hypermotion.svg',
+				},
+				match: 'Jornada 10',
+				season: '2023-2024',
+				teams: [
+					{
+						image: '/images/leagues/amorebieta.png',
+						name: 'Amorebieta',
+						result: '1',
+					},
+					{
+						image: '/images/leagues/eibar.png',
+						name: 'Eibar',
+						result: '2',
+					},
+				],
+			},
+			{
+				categoryLeague: 'LaLiga Hypermotion',
+				date: '2023-10-15T16:30:00.00Z',
+				league: {
+					name: 'LaLiga Hypermotion',
+					image: '/images/leagues/laliga-hypermotion.svg',
+				},
+				match: 'Jornada 11',
+				season: '2023-2024',
+				teams: [
+					{
+						image: '/images/leagues/leganes.png',
+						name: 'Leganés',
+						result: '-',
+					},
+					{
+						image: '/images/leagues/amorebieta.png',
+						name: 'Amorebieta',
+						result: '-',
+					},
+				],
+			},
+			{
+				categoryLeague: 'LaLiga Hypermotion',
+				date: '2023-10-21T14:00:00.00Z',
+				league: {
+					name: 'LaLiga Hypermotion',
+					image: '/images/leagues/laliga-hypermotion.svg',
+				},
+				match: 'Jornada 12',
+				season: '2023-2024',
+				teams: [
+					{
+						image: '/images/leagues/amorebieta.png',
+						name: 'Amorebieta',
+						result: '-',
+					},
+					{
+						image: '/images/leagues/oviedo.png',
+						name: 'Oviedo',
+						result: '-',
+					},
+				],
+			},
+			{
+				categoryLeague: 'LaLiga Hypermotion',
+				date: '2023-10-28T12:00:00.00Z',
+				league: {
+					name: 'LaLiga Hypermotion',
+					image: '/images/leagues/laliga-hypermotion.svg',
+				},
+				match: 'Jornada 13',
+				season: '2023-2024',
+				teams: [
+					{
+						image: '/images/leagues/eldense.png',
+						name: 'Eldense',
+						result: '-',
+					},
+					{
+						image: '/images/leagues/amorebieta.png',
+						name: 'Amorebieta',
+						result: '-',
+					},
+				],
+			},
+			{
+				categoryLeague: 'LaLiga Hypermotion',
+				date: '2023-11-05T14:15:00.00Z',
+				league: {
+					name: 'LaLiga Hypermotion',
+					image: '/images/leagues/laliga-hypermotion.svg',
+				},
+				match: 'Jornada 14',
+				season: '2023-2024',
+				teams: [
+					{
+						image: '/images/leagues/amorebieta.png',
+						name: 'Amorebieta',
+						result: '-',
+					},
+					{
+						image: '/images/leagues/huesca.png',
+						name: 'Huesca',
+						result: '-',
+					},
+				],
+			},
+			{
+				categoryLeague: 'LaLiga Hypermotion',
+				date: '2023-11-12T19:00:00.00Z',
+				league: {
+					name: 'LaLiga Hypermotion',
+					image: '/images/leagues/laliga-hypermotion.svg',
+				},
+				match: 'Jornada 15',
+				season: '2023-2024',
+				teams: [
+					{
+						image: '/images/leagues/gijon.png',
+						name: 'Sporting Gijón',
+						result: '-',
+					},
+					{
+						image: '/images/leagues/amorebieta.png',
+						name: 'Amorebieta',
+						result: '-',
+					},
+				],
+			},
+		];
+		images.map((obj, index) => {
+			sliders.insertAdjacentHTML(
+				'beforeend',
+				`<img class="image-${index}" src="https://img2.helpnetsecurity.com/posts2022/privacy_affairs-20062022.jpg" alt="image-${index}">`,
+			);
+		});
+		scrollPerClick =
+			document.querySelector('.image-1').clientWidth + imagePadding;
+	</script>
+</html>

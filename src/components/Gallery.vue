@@ -31,7 +31,7 @@
 	font-size: 2.625rem;
 	font-weight: 800;
 	padding-left: 1rem;
-	border-left: var(--mainColor) 8px solid;
+	border-left: var(--neutral-0) 8px solid;
 }
 
 @media only screen and (min-width: 768px) {

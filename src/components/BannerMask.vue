@@ -25,28 +25,28 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
-const video = ref("./videos/nike-shot.mp4");
+import { ref } from 'vue';
+const video = ref('./videos/nike-shot.mp4');
 const socialLogos = ref([
 	{
-		name: "facebook",
-		logo: "/images/social-icons/facebook.svg",
-		link: "#",
+		name: 'facebook',
+		logo: '/images/social-icons/facebook.svg',
+		link: '#',
 	},
 	{
-		name: "instagram",
-		logo: "/images/social-icons/instagram.svg",
-		link: "#",
+		name: 'instagram',
+		logo: '/images/social-icons/instagram.svg',
+		link: '#',
 	},
 	{
-		name: "youtube",
-		logo: "/images/social-icons/youtube.svg",
-		link: "#",
+		name: 'youtube',
+		logo: '/images/social-icons/youtube.svg',
+		link: '#',
 	},
 ]);
 
 const fx = () => {
-	console.log("hola");
+	console.log('hola');
 };
 </script>
 
@@ -78,8 +78,8 @@ const fx = () => {
 	width: 100%;
 	height: 100%;
 	background-repeat: no-repeat;
-	background-position: center 10px ;
-	background-image: url("/images/luisbn.jpg");
+	background-position: center 10px;
+	background-image: url('/images/luisbn.jpg');
 	mix-blend-mode: multiply;
 	position: relative;
 }
@@ -87,7 +87,7 @@ const fx = () => {
 .banner-mask__title {
 	position: absolute;
 	top: 60%;
-	color: white;
+	color: var(--lightColor);
 	font-weight: 900;
 	font-size: 30px;
 }
@@ -122,22 +122,22 @@ const fx = () => {
 	transform: scale(1, 1);
 	transition: transform 0.25s ease-in;
 }
-.menu__list-social--icon[alt="youtube"] {
+.menu__list-social--icon[alt='youtube'] {
 	height: 32px;
 }
-.menu__list-social--icon[alt="facebook"]:hover,
-.menu__list-social--icon[alt="instagram"]:hover,
-.menu__list-social--icon[alt="youtube"]:hover {
+.menu__list-social--icon[alt='facebook']:hover,
+.menu__list-social--icon[alt='instagram']:hover,
+.menu__list-social--icon[alt='youtube']:hover {
 	transform: scale(1.15, 1.15);
 	transition: transform 0.25s ease-in;
 }
-.menu__list-social--icon[alt="facebook"]:hover {
+.menu__list-social--icon[alt='facebook']:hover {
 	filter: invert(49%) sepia(44%) saturate(7496%) hue-rotate(218deg)
 		brightness(91%) contrast(92%);
 }
-.menu__list-social--icon[alt="instagram"]:hover {
+.menu__list-social--icon[alt='instagram']:hover {
 }
-.menu__list-social--icon[alt="youtube"]:hover {
+.menu__list-social--icon[alt='youtube']:hover {
 	filter: grayscale(100%) brightness(40%) sepia(100%) hue-rotate(-50deg)
 		saturate(1600%) contrast(1);
 }
@@ -147,7 +147,7 @@ const fx = () => {
 		font-size: 60px;
 	}
 	.banner-mask p {
-		color: white;
+		color: var(--lightColor);
 	}
 }
 

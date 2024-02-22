@@ -18,7 +18,7 @@ p {
 	align-items: center;
 	overflow: hidden;
 	height: auto;
-	z-index: 2;
+	/* z-index: 2; */
 }
 
 /* .biography__image {
@@ -45,7 +45,7 @@ p {
 	right: 0;
 	bottom: 0;
 	width: 100%;
-	z-index: 0;
+	/* z-index: 0; */
 	overflow: hidden;
 
 	animation-name: MOVE-BG;

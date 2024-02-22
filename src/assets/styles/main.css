@@ -1,11 +1,9 @@
-@import "../fonts/Poppins/index.css";
-@import "./glitch-fx.css";
-@import "./movement-bg.css";
-
-:root {
-	--mainColor: black;
-	--secondaryColor: #e0ae00;
-}
+@import './variables.css';
+@import '../fonts/Poppins/index.css';
+@import '../fonts/Outfit/index.css';
+@import '../fonts/Oswald/index.css';
+@import './glitch-fx.css';
+@import './movement-bg.css';
 
 /* Reseteamos los margin y paddings de todas las etiquetas */
 * {
@@ -14,23 +12,78 @@
 	border: 0;
 	box-sizing: border-box;
 	scroll-behavior: smooth;
-	color: var(--mainColor);
-	font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Outfit',
+		'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+	font-synthesis: none;
+	text-rendering: optimizeLegibility;
+	-webkit-text-size-adjust: 100%;
+	scroll-behavior: smooth;
 }
 
-html {
-	height: 100%;
+/* width */
+::-webkit-scrollbar {
+	width: 5px;
 }
 
-html,
+/* Track */
+::-webkit-scrollbar-track {
+	background: var(--neutral-10);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb:hover {
+	background: var(--theme-dark);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb {
+	/* background: var(--theme); */
+	background: #005aa6;
+}
+
+p,
+a,
+input,
 textarea,
-body {
-	width: 100vw;
+blockquote,
+span {
+	font-size: clamp(0.875rem, 2vw + var(--base-font-size), 2rem);
 }
 
-img {
-	max-width: 100%;
-	display: block;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-weight: 700;
+}
+
+h1 {
+	font-size: clamp(1.5rem, 2vw + var(--base-font-size), 2.25rem);
+}
+
+h2 {
+	font-size: clamp(1.25rem, 2vw + var(--base-font-size), 1.75rem);
+}
+
+h3 {
+	font-size: clamp(1rem, 2vw + var(--base-font-size), 1.25rem);
+}
+
+h4 {
+	font-size: clamp(0.875rem, 2vw + var(--base-font-size), 1rem);
+}
+
+h5 {
+	font-size: clamp(0.8125rem, 2vw + var(--base-font-size), 0.875rem);
+}
+
+body {
+	background: var(--neutral-0);
+	color: var(--neutral-100);
+	overflow-x: hidden;
+	width: 100vw;
 }

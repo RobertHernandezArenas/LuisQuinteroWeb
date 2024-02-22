@@ -1,43 +1,33 @@
-<template>
-	<div @click="toGoUp" id="go-up" class="mostrar">
-		<img class="button-up" src="/images/icons/up-arrow.png" alt="icono boton" />
-	</div>
-</template>
-
 <script setup>
-import { onMounted } from "vue";
+import { onMounted } from 'vue';
 
-let distanceToTop = () => {
-	return document.documentElement.scrollTop || document.body.scrollTop;
-};
-const toGoUp = () => {
-
-
-	//scrollTo(0, 1840);
-	if (distanceToTop() > 0) {
-		scrollTo(0, 0);
-		return true;
-	}
-	return false;
-};
+const toGoUp = () => scrollTo(0, 0);
 
 onMounted(() => {
-	let btn = document.querySelector("#go-up");
-
-	window.onscroll = function () {
-		if (document.documentElement.scrollTop > 20) {
-			btn.classList.remove("ocultar");
-			btn.classList.add("mostrar");
+	let btn = document.querySelector('.go-up');
+	window.addEventListener('scroll', () => {
+		if (document.documentElement.scrollTop != 0) {
+			btn.classList.add('mostrar');
 		} else {
-			btn.classList.remove("mostrar");
-			btn.classList.add("ocultar");
+			btn.classList.remove('mostrar');
 		}
-	};
+	});
 });
 </script>
 
+<template>
+	<div @click="toGoUp" id="go-up" class="go-up">
+		<img
+			class="button-up"
+			src="/images/up-arrow.svg"
+			alt="Botón volver arriba"
+			title="Volver arriba"
+		/>
+	</div>
+</template>
+
 <style scoped>
-#go-up {
+.go-up {
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -45,13 +35,14 @@ onMounted(() => {
 	z-index: 3;
 	right: 25px;
 	bottom: 25px;
-	background-color: #006e8b;
-	width: 40px;
-	height: 40px;
-	color: white;
+	background-color: #005aa6; /* #ffe200; */
+	width: 30px;
+	height: 30px;
+	color: var(--lightColor);
 	text-align: center;
 	border-radius: 50%;
-	transition: all 0.2s;
+	transition: all 0.25s ease-out;
+	opacity: 0;
 }
 
 #go-up:hover {
@@ -60,27 +51,22 @@ onMounted(() => {
 }
 
 .button-up {
-	width: 23px;
+	width: 15px;
 	-webkit-filter: drop-shadow(5px 5px 5px #666666);
 	filter: drop-shadow(5px 5px 5px #666666);
 }
 
-.ocultar {
-	opacity: 0;
-	visibility: hidden;
-}
-
 .mostrar {
+	transition: all 0.65s ease-in;
 	opacity: 1;
-	visibility: visible;
 }
 @media only screen and (min-width: 1024px) {
 	#go-up {
-		width: 65px;
-		height: 65px;
+		width: 35px;
+		height: 35px;
 	}
 	.button-up {
-		width: 40px;
+		width: 15px;
 	}
 }
 </style>

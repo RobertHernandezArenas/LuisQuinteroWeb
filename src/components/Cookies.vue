@@ -7,45 +7,43 @@
 
 		<div class="data">
 			<p>
-				Utilizamos cookies para asegurarnos de ofrecerte la mejor
-				experiencia en nuestro sitio web. Haga clic
+				Utilizamos cookies para asegurarnos de ofrecerte la mejor experiencia en
+				nuestro sitio web. Haga clic
 				<a href="/RGPD/privacy-policy.pdf"> aquí </a>para obtener más
 				información.
 			</p>
 		</div>
 
 		<div class="buttons">
-			<button @click="isAcepted" class="button" id="acceptBtn">
-				Aceptar
-			</button>
+			<button @click="isAcepted" class="button" id="acceptBtn">Aceptar</button>
 			<button class="button" id="declineBtn">Rechazar</button>
 		</div>
 	</div>
 </template>
 
 <script setup>
-import { onMounted } from "vue";
+import { onMounted } from 'vue';
 
 const isAcepted = () => {
-	let btn = document.querySelector(".button");
-	let cookieBox = document.querySelector(".wrapper");
-	cookieBox.classList.remove("show");
-	document.cookie = "CookieConsent= Accepted-LuisQuintero10;";
+	let btn = document.querySelector('.button');
+	let cookieBox = document.querySelector('.wrapper');
+	cookieBox.classList.remove('show');
+	document.cookie = 'CookieConsent= Accepted-LuisQuintero10;';
 };
 
 onMounted(() => {
-	const cookieBox = document.querySelector(".wrapper");
+	const cookieBox = document.querySelector('.wrapper');
 
 	const executeCodes = () => {
 		//if cookie contains codinglab it will be returned and below of this code will not run
-		if (!document.cookie.includes("LuisQuintero10")) {
+		if (!document.cookie.includes('LuisQuintero10')) {
 			// return cookieBox.classList.add("is-hidden");
-			return cookieBox.classList.add("show");
+			return cookieBox.classList.add('show');
 		}
 	};
 
 	//executeCodes function will be called on webpage load
-	window.addEventListener("load", executeCodes);
+	window.addEventListener('load', executeCodes);
 });
 </script>
 
@@ -78,11 +76,11 @@ onMounted(() => {
 	column-gap: 15px;
 }
 header i {
-	color: var(--mainColor);
+	color: var(--neutral-0);
 	font-size: 32px;
 }
 header h2 {
-	color: var(--mainColor);
+	color: var(--neutral-0);
 	font-size: 1.2rem;
 	font-weight: 500;
 }
@@ -114,7 +112,7 @@ header h2 {
 	color: #fff;
 	padding: 8px 0;
 	border-radius: 4px;
-	background: var(--mainColor);
+	background: var(--neutral-0);
 	cursor: pointer;
 	width: calc(100% / 2 - 10px);
 	transition: all 0.2s ease;
@@ -123,9 +121,9 @@ header h2 {
 	background-color: rgb(36, 163, 68);
 }
 #declineBtn {
-	border: 2px solid var(--mainColor);
+	border: 2px solid var(--neutral-0);
 	background-color: #fff;
-	color: var(--mainColor);
+	color: var(--neutral-0);
 }
 #declineBtn:hover {
 	background-color: rgb(216, 64, 64);

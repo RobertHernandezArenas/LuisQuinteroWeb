@@ -440,12 +440,12 @@
             "team1":  {
                 "image": "/images/teams/alboraya.webp",
                 "name": "Alboraya",
-                "result": ""
+                "result": "2"
             },
             "team2": {
                 "image": "/images/teams/villarreal.webp",
                 "name": "Juvenil A",
-                "result": ""
+                "result": "3"
             }
         },
         {
@@ -457,12 +457,12 @@
             "team1": {
                 "image": "/images/teams/villarreal.webp",
                 "name": "Juvenil A",
-                "result": ""
+                "result": "3"
             },
             "team2": {
                 "image": "/images/teams/ucam.webp",
                 "name": "UCAM",
-                "result": ""
+                "result": "1"
             }
         },
         {
@@ -474,12 +474,12 @@
             "team1": {
                 "image": "/images/teams/valencia.webp",
                 "name": "Valencia",
-                "result": ""
+                "result": "0"
             },
             "team2": {
                 "image": "/images/teams/villarreal.webp",
                 "name": "Juvenil A",
-                "result": ""
+                "result": "2"
             }
         },
         {
@@ -491,12 +491,12 @@
             "team1": {
                 "image": "/images/teams/villarreal.webp",
                 "name": "Juvenil A",
-                "result": ""
+                "result": "5"
             },
             "team2": {
                 "image": "/images/teams/cartagena.webp",
                 "name": "Cartagena",
-                "result": ""
+                "result": "0"
             }
         },
         {
@@ -508,12 +508,12 @@
             "team1": {
                 "image": "/images/teams/levante.webp",
                 "name": "Levante",
-                "result": ""
+                "result": "1"
             },
             "team2": {
                 "image": "/images/teams/villarreal.webp",
                 "name": "Juvenil A",
-                "result": ""
+                "result": "2"
             }
         },
         {
@@ -522,16 +522,16 @@
             "league": "Grupo-7",
             "match": "Jornada 28",
             "season": "2022-2023",
-            "team1":  {
-                "image": "/images/teams/intersanjose.webp",
-                "name": "Inter San Jose",
-                "result": ""
-            },
-            "team2": {
+            "team1": {
                 "image": "/images/teams/villarreal.webp",
                 "name": "Juvenil A",
-                "result": ""
-            }
+                "result": "5"
+            },
+            "team2": {
+                "image": "/images/teams/intersanjose.webp",
+                "name": "Inter San Jose",
+                "result": "0"
+            } 
         },
         {
             "categoryLeague": "Div. Honor Juvenil",
@@ -542,12 +542,12 @@
             "team1": {
                 "image": "/images/teams/villarreal.webp",
                 "name": "Juvenil A",
-                "result": ""
+                "result": "2"
             },
             "team2": {
                 "image": "/images/teams/hercules.webp",
                 "name": "Hercules",
-                "result": ""
+                "result": "0"
             }
         },
         {
@@ -559,12 +559,12 @@
             "team1": {
                 "image": "/images/teams/castellon.webp",
                 "name": "Castellon",
-                "result": ""
+                "result": "2"
             },
             "team2": {
                 "image": "/images/teams/villarreal.webp",
                 "name": "Juvenil A",
-                "result": ""
+                "result": "2"
             }
         }
     ]

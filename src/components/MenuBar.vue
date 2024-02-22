@@ -5,27 +5,27 @@
 				<div class="logo">
 					<router-link to="/" class="logo__router-link">
 						<img
-							:src="logo"
-							alt="Logo"
+							:src="menuData.logo.image"
+							:alt="menuData.logo.name"
 							class="logo__image"
-							width="40"
-							height="40"
+							:width="menuData.logo.size.width"
+							:height="menuData.logo.size.height"
 						/>
 						<h1 class="title">LUIS QUINTERO</h1>
 					</router-link>
 				</div>
 				<ul class="nav-links">
 					<li>
-						<router-link class="router-link" active-class="active" to="/"
-							>Inicio</router-link
-						>
+						<router-link class="router-link" active-class="active" to="/">{{
+							t('home.menu.home')
+						}}</router-link>
 					</li>
 					<li>
 						<router-link
 							class="router-link"
 							active-class="active"
 							to="/biografia"
-							>Biografia</router-link
+							>{{ t('about.title') }}</router-link
 						>
 					</li>
 
@@ -34,7 +34,7 @@
 							class="router-link"
 							active-class="active"
 							to="/galeria"
-							>Galeria</router-link
+							>{{ t('gallery.title') }}</router-link
 						>
 					</li>
 					<li>
@@ -42,7 +42,7 @@
 							class="router-link"
 							active-class="active"
 							to="/contacto"
-							>Contacto</router-link
+							>{{ t('contact.title') }}</router-link
 						>
 					</li>
 				</ul>
@@ -68,109 +68,100 @@
 				active-class="active"
 				@click="menuFX"
 				to="/"
-				>Inicio</router-link
+				>{{ t('home.menu.home') }}</router-link
 			>
 			<router-link
 				class="router-link nav-mobile-links"
 				active-class="active"
 				@click="menuFX"
 				to="/biografia"
-				>Biografia</router-link
+				>{{ t('about.title') }}</router-link
 			>
 			<router-link
 				class="router-link nav-mobile-links"
 				active-class="active"
 				@click="menuFX"
 				to="/galeria"
-				>Galeria</router-link
+				>{{ t('gallery.title') }}</router-link
 			>
 			<router-link
 				class="router-link nav-mobile-links"
 				active-class="active"
 				@click="menuFX"
 				to="/contacto"
-				>Contacto</router-link
+				>{{ t('contact.title') }}</router-link
 			>
 		</div>
 	</nav>
 </template>
 
 <script setup>
-import { onMounted, computed, ref, watch, reactive } from "vue";
-import ButtonMenu from "./icons/ButtonMenu.vue";
-import ButtonClose from "./icons/ButtonClose.vue";
+import { ref } from 'vue';
+import ButtonMenu from './icons/ButtonMenu.vue';
+import ButtonClose from './icons/ButtonClose.vue';
+import { useI18n } from 'vue-i18n';
+const { t, locale } = useI18n();
 
-const logo = ref("/images/web-logo/light-logo.png");
-const fill = ref("#FFFFFF");
-const width = ref("35px");
-const height = ref("35px");
-
-const menuFX = e => {
-	let mobileNav = document.querySelector(".nav-mobile");
-	let closeFx = document.querySelector(".nav-mobile__close-button");
-
-	mobileNav.classList.toggle("show-nav-mobile");
-	closeFx.classList.toggle("fx");
-
-	/** SCROLLTO CORRECT SECTION  */
+const menuData = {
+	title: t('home.title').toLocaleUpperCase(),
+	logo: {
+		image: '/images/web-logo/light-logo.png',
+		name: 'Logo Luis Quintero Web',
+		size: { width: '40', height: '40' },
+		url: '/',
+	},
+	links: [
+		{ name: t('home.menu.home'), url: '/' },
+		{ name: t('about.title'), url: '/biografia' },
+		{ name: t('gallery.title'), url: '/galeria' },
+		{ name: t('contact.title'), url: '/contacto' },
+	],
 };
 
-onMounted(() => {
-	let nav = document.querySelector(".navigation");
-	let title = document.querySelector(".title");
+const fill = ref('#FFFFFF');
+const width = ref('35px');
+const height = ref('35px');
 
-	window.addEventListener("scroll", () => {
-		if (document.documentElement.scrollTop >= 20) {
-			nav.classList.add("sticky");
-			title.classList.add("black");
-			logo.value = "/images/web-logo/dark-logo.png";
-			fill.value = "#000000";
-			nav.fill = "#FFFFFF";
-		} else {
-			title.classList.remove("black");
-			nav.classList.remove("sticky");
-			logo.value = "/images/web-logo/light-logo.png";
-			fill.value = "#FFFFFF";
-		}
-	});
-});
+const menuFX = e => {
+	let mobileNav = document.querySelector('.nav-mobile');
+	let closeFx = document.querySelector('.nav-mobile__close-button');
+
+	mobileNav.classList.toggle('show-nav-mobile');
+	closeFx.classList.toggle('fx');
+};
 </script>
 
 <style scoped>
 .nav {
 	height: 80px;
 }
-.navigation .logo .logo__router-link h1.title.black {
-	color: black;
-}
 
 .nav-mobile {
-	background: black;
+	background: var(--neutral-0);
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	position: absolute;
+	position: fixed;
 	top: 0;
 	left: 0;
-	z-index: 20;
-	gap: 1.5rem;
+	gap: var(--m);
 	width: 100%;
 	height: 100%;
 	opacity: 0;
 	transform: translateX(-100%);
+	z-index: 100;
 	transition: all 0.35s ease-in-out;
 }
 
 .nav-mobile-links {
 	font-weight: 700;
-	font-size: 1.5rem;
+	font-size: var(--l);
 }
 
 .nav-mobile.show-nav-mobile {
 	opacity: 1;
 	position: fixed;
-
 	transform: translateX(0%);
 	transition: all 0.35s ease-in-out;
 }
@@ -189,29 +180,27 @@ onMounted(() => {
 }
 
 .router-link {
-	color: #fff;
+	color: var(--neutral-100);
 	text-decoration: none;
 }
 
 .navigation {
-	background: var(--mainColor);
 	padding: 20px 40px;
 	transition: padding 0.65s ease-in-out;
 	width: 100%;
-	z-index: 10;
 }
 
 .navigation.sticky {
 	position: fixed;
-	left: 0;
-	top: 0;
+	left: var(--zero);
+	top: var(--zero);
 	padding: 25px 40px;
-	background: white;
+	color: var(--neutral-100);
 	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
 }
 
 .navigation.sticky .nav-content .nav-links li a {
-	color: black;
+	color: var(--neutral-0);
 }
 .navigation .nav-content {
 	height: 100%;
@@ -230,7 +219,8 @@ onMounted(() => {
 }
 
 .navigation .logo .logo__router-link h1.title {
-	color: white;
+	display: none;
+	color: var(--neutral-100);
 	font-size: 1rem;
 }
 .navigation .logo a {
@@ -239,7 +229,7 @@ onMounted(() => {
 	text-decoration: none;
 }
 .navigation.sticky .logo a {
-	color: #fff;
+	color: var(--neutral-100);
 }
 
 .logo__image {
@@ -254,31 +244,20 @@ onMounted(() => {
 }
 .nav-links li a {
 	text-decoration: none;
-	color: rgb(233, 233, 233);
+	color: var(--neutral-100);
 	font-size: 16px;
 	font-weight: 500;
 	padding: 10px 4px;
 	transition: all 0.3s ease;
 }
-.nav-links .router-link:hover {
-	background-image: linear-gradient(to top, #50cc7f 0%, #f5d100 100%);
-	-webkit-background-clip: text;
-	-webkit-text-fill-color: transparent;
-}
-
+.nav-links .router-link:hover,
 a.active.router-link-exact-active.router-link {
-	background: linear-gradient(
-		109.6deg,
-		rgb(255, 219, 47) 11.2%,
-		rgb(244, 253, 0) 100.2%
-	);
-	-webkit-background-clip: text;
-	-webkit-text-fill-color: transparent;
-	font-weight: bolder;
+	color: #005aa6;
+	/* color: var(--theme); */
 }
 
 .navigation.sticky .nav-links li a {
-	color: #fff;
+	color: var(--neutral-100);
 	transition: all 0.4s ease;
 }
 .navigation.sticky .nav-links li a:hover {
@@ -286,12 +265,17 @@ a.active.router-link-exact-active.router-link {
 }
 
 @media only screen and (min-width: 1024px) {
-	.nav-content .nav-links {
-		display: flex;
-	}
-
 	.menu__burger {
 		display: none;
+	}
+	.navigation .logo .logo__router-link h1.title {
+		display: block;
+	}
+}
+
+@media only screen and (min-width: 1200px) {
+	.nav-content .nav-links {
+		display: flex;
 	}
 }
 </style>

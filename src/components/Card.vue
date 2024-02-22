@@ -1,55 +1,58 @@
+<script setup>
+const props = defineProps({
+	item: {
+		type: Object,
+		default: () => {
+			return {
+				name: 'Item Name',
+				quantity: 0,
+			};
+		},
+	},
+});
+</script>
+
 <template>
 	<div class="card">
-    <p><span>Goles</span></p>
-    <p><span>Asistencias</span></p>
-    <p><span>Minutos</span></p>
-    <p><span>Partidos</span></p>
-</div>
+		<h1 class="card__quantity">{{ item.quantity }}</h1>
+		<h2 class="card__name">{{ item.name }}</h2>
+	</div>
 </template>
 
 <script setup></script>
 
 <style scoped>
 .card {
-  /* width: 210px; */
-  width: 100%;
-  height: 254px;
-  /* border-radius: 4px; */
-  background: black;
-  display: flex;
-  gap: 5px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background: rgba(233, 233, 233, 0.15);
+	background: radial-gradient(100% 225% at 100% 0%, #ff0000 0%, #000000 100%),
+		linear-gradient(236deg, #00c2ff 0%, #000000 100%),
+		linear-gradient(
+			135deg,
+			#cdffeb 0%,
+			#cdffeb 36%,
+			#009f9d 36%,
+			#009f9d 60%,
+			#07456f 60%,
+			#07456f 67%,
+			#0f0a3c 67%,
+			#0f0a3c 100%
+		);
+	background-blend-mode: overlay, hard-light, normal;
+	border-radius: 0.25rem;
+	padding: 2rem 1rem;
+	width: 300px;
+	height: 200px;
+	margin: 2rem 0;
+}
+.card__quantity {
+	font-weight: 700;
 }
 
-.card p {
-  height: 100%;
-  flex: 1;
-  overflow: hidden;
-  cursor: pointer;
-  transition: all .5s ease-in-out;
-  background: url("/images/T.jpg");
-  background-repeat: no-repeat;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.card p:hover {
-  flex: 4;
-}
-
-.card p span {
-  min-width: 14em;
-  padding: .5em;
-  text-align: center;
-  transform: rotate(-90deg);
-  transition: all .5s;
-  text-transform: uppercase;
-  color: black;
-  font-weight: 700;
-  letter-spacing: .1em;
-}
-
-.card p:hover span {
-  transform: rotate(0);
+.card__name {
+	font-weight: 500;
 }
 </style>
